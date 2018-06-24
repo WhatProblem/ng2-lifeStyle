@@ -1,8 +1,11 @@
 # ng2-lifeStyle
 npm install
 如果安装失败，运行:
+```
 npm config set registry https://registry.npmjs.org/
+```
 npm cache clean --force
+```
 # 打包
 npm run build
 
