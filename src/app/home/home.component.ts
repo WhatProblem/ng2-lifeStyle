@@ -1,9 +1,6 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { AppState } from '../app.service';
+// import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLargeDirective } from './x-large';
 
@@ -23,7 +20,7 @@ import { XLargeDirective } from './x-large';
   /**
    * Our list of styles in our component. We may add more to compose many styles together.
    */
-  styleUrls: [ './home.component.css' ],
+  styleUrls: ['./home.component.css'],
   /**
    * Every Angular template is first compiled by the browser before Angular runs it's compiler.
    */
@@ -38,9 +35,9 @@ export class HomeComponent implements OnInit {
    * TypeScript public modifiers
    */
   constructor(
-    public appState: AppState,
+    // public appState: AppState,
     public title: Title
-  ) {}
+  ) { }
 
   public ngOnInit() {
     console.log('hello `Home` component');
@@ -51,7 +48,7 @@ export class HomeComponent implements OnInit {
 
   public submitState(value: string) {
     console.log('submitState', value);
-    this.appState.set('value', value);
+    // this.appState.set('value', value);
     this.localState.value = '';
   }
 }

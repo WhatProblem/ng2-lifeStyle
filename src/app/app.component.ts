@@ -3,7 +3,7 @@
  */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { environment } from 'environments/environment';
-import { AppState } from './app.service';
+// import { AppState } from './app.service';
 
 /**
  * App Component
@@ -47,7 +47,7 @@ import { AppState } from './app.service';
       <router-outlet></router-outlet>
     </main>
 
-    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
+    <pre class="app-state">this.appState.state = {{ appState?.state | json }}</pre>
 
     <footer>
       <span>Angular Starter by <a [href]="twitter">@gdi2290</a></span>
@@ -66,12 +66,15 @@ export class AppComponent implements OnInit {
   public url = 'https://tipe.io';
   public showDevModule: boolean = environment.showDevModule;
 
-  constructor(
-    public appState: AppState
-  ) {}
+  // constructor(
+  //   public appState: AppState
+  // ) {}
+  constructor() {
+    
+  }
 
   public ngOnInit() {
-    console.log('Initial App State', this.appState.state);
+    // console.log('Initial App State', this.appState.state);
   }
 
 }

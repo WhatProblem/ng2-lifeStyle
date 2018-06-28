@@ -17,7 +17,7 @@ import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
-import { AppState, InternalStateType } from './app.service';
+// import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
@@ -28,16 +28,16 @@ import '../styles/styles.scss';
 import '../styles/headings.css';
 
 // Application wide providers
-const APP_PROVIDERS = [
-  ...APP_RESOLVER_PROVIDERS,
-  AppState
-];
+// const APP_PROVIDERS = [
+//   ...APP_RESOLVER_PROVIDERS,
+//   AppState
+// ];
 
-interface StoreType {
-  state: InternalStateType;
-  restoreInputValues: () => void;
-  disposeOldHosts: () => void;
-}
+// interface StoreType {
+//   state: InternalStateType;
+//   restoreInputValues: () => void;
+//   disposeOldHosts: () => void;
+// }
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
@@ -77,7 +77,7 @@ interface StoreType {
    */
   providers: [
     environment.ENV_PROVIDERS,
-    APP_PROVIDERS
+    // APP_PROVIDERS
   ]
 })
 export class AppModule { }
