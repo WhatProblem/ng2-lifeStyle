@@ -19,5 +19,5 @@ npm run build
 ```
 ```
 ```
-#### [框架配置参考angular-starter]:(https://github.com/gdi2290/angular-starter)
+     [框架配置参考angular-starter]:(https://github.com/gdi2290/angular-starter)
 ```
