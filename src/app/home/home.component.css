@@ -1,1 +1,4 @@
-/*styles for home content only*/
+.selected {
+  background: hotpink;
+  color: deepskyblue;
+}
