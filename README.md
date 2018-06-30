@@ -15,8 +15,5 @@ npm run build
 #### [后台管理系统地址]:(https://github.com/whatproblem/vueElement)
 #### [后台接口项目地址]:(https://github.com/whatproblem/nodeSql)
 #### [前台PC项目地址]:(https://github.com/whatproblem/ng2-lifeStyle)
-```
-```
-```
-```
+---
 #### [框架配置参考angular-starter]:(https://github.com/gdi2290/angular-starter)
