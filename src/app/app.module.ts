@@ -14,10 +14,17 @@ import 'element-angular/theme/index.css';
  */
 import { environment } from 'environments/environment';
 import { AppComponent } from './app.component';
-import { HomeModule } from './home/home.module';
+// import { HomeModule } from './home/home.module';
 
 import { PageNotFoundComponent } from './not-found/page404';
 import { AppRoutesModule } from './appRoutes.module';
+
+import { HeroesModule } from './heroes/heroes.module';
+import { ComposeMessageComponent } from './compose-message.component';
+import { LoginRoutingModule } from './login-routing.module';
+import { LoginComponent } from './login.component';
+
+import { DialogService } from './dialog.service';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -34,7 +41,9 @@ import '../styles/headings.css';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    HomeModule,
+    // HomeModule,
+    HeroesModule,
+    LoginRoutingModule,
     AppRoutesModule,
     ElModule.forRoot(),
 
@@ -47,6 +56,8 @@ import '../styles/headings.css';
   ],
   declarations: [
     AppComponent,
+    ComposeMessageComponent,
+    LoginComponent,
     PageNotFoundComponent
   ],
   bootstrap: [AppComponent],
@@ -55,6 +66,7 @@ import '../styles/headings.css';
    */
   providers: [
     environment.ENV_PROVIDERS,
+    DialogService
   ]
 })
 export class AppModule { }
