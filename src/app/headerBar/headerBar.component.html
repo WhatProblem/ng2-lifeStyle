@@ -1,0 +1,38 @@
+<el-menu [model]="0" (modelChange)="handle($event)" class="el-menu-demo" mode="horizontal" background-color="#545c64" active-text-color="#ffd04b"
+  text-color="#fff">
+  <div el-col [span]="1" offset=5>
+    <div class="grid-content bg-purple">
+      <el-menu-item index="1">首页</el-menu-item>
+    </div>
+  </div>
+  <div el-col [span]="1" offset=1>
+    <div class="grid-content bg-purple">
+      <el-menu-item index="2">影视</el-menu-item>
+    </div>
+  </div>
+  <div el-col [span]="1" offset=1>
+    <div class="grid-content bg-purple">
+      <el-menu-item index="3">音乐</el-menu-item>
+    </div>
+  </div>
+  <div el-col [span]="1" offset=1>
+    <div class="grid-content bg-purple">
+      <el-menu-item index="4">游戏</el-menu-item>
+    </div>
+  </div>
+  <div el-col [span]="4" offset=8>
+    <div class="grid-content bg-purple">
+      <el-submenu index="5" title="admin">
+        <el-menu-item index="5-1">个人信息</el-menu-item>
+        <el-menu-item index="5-2">退出</el-menu-item>
+      </el-submenu>
+      <el-menu-item index="6"><a href="https://github.com/WhatProblem/ng2-lifeStyle" target="_blank">GITHUB</a></el-menu-item>
+    </div>
+  </div>
+</el-menu>
+
+<!--<div el-row type="flex" class="row-bg">
+  <div el-col [span]="6"><div class="grid-content bg-purple"></div></div>
+  <div el-col [span]="6"><div class="grid-content bg-purple-light"></div></div>
+  <div el-col [span]="6"><div class="grid-content bg-purple"></div></div>
+</div>-->
