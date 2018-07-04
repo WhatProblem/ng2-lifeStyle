@@ -1,3 +1,35 @@
-.el-menu--horizontal .el-menu-item {
-  font-size: 20px;
+.wsHeader {
+  .el-menu--horizontal .el-menu-item {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .el-menu--horizontal .el-submenu .el-submenu__title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .el-menu--horizontal .el-submenu .el-menu-item {
+    font-size: 14px;
+  }
+
+  .searchInput {
+    height: 100%;
+    line-height: 60px;
+  }
+
+  .wsLogo {
+    height: 60px;
+
+    .wsAvatar {
+      height: 100%;
+
+      img {
+        height: 45px;
+        border-radius: 50%;
+        position: relative;
+        top: 10px;
+      }
+    }
+  }
 }

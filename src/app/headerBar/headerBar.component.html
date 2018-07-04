@@ -1,35 +1,52 @@
-<el-menu [model]="0" (modelChange)="handle($event)" class="el-menu-demo" mode="horizontal" background-color="#545c64" active-text-color="#ffd04b"
-  text-color="#fff">
-  <div el-col [span]="1" offset=5>
-    <div class="grid-content bg-purple">
-      <el-menu-item index="1">首页</el-menu-item>
+<div class="wsHeader">
+  <el-menu [model]="0" (modelChange)="handle($event)" class="el-menu-demo" mode="horizontal" background-color="#545c64" active-text-color="#ffd04b"
+    text-color="#fff">
+    <div el-col [span]="1" offset=1 class="wsLogo">
+      <div class="wsAvatar">
+        <img src="../../assets/img/wsAvatar.jpg" alt="">
+      </div>
     </div>
-  </div>
-  <div el-col [span]="1" offset=1>
-    <div class="grid-content bg-purple">
-      <el-menu-item index="2">影视</el-menu-item>
+    <div el-col [span]="10">
+      <div el-row>
+        <div el-col [span]="3" offset=8>
+          <div class="grid-content bg-purple">
+            <el-menu-item index="1">首页</el-menu-item>
+          </div>
+        </div>
+        <div el-col [span]="3" offset=1>
+          <div class="grid-content bg-purple">
+            <el-menu-item index="2">影视</el-menu-item>
+          </div>
+        </div>
+        <div el-col [span]="3" offset=1>
+          <div class="grid-content bg-purple">
+            <el-menu-item index="3">音乐</el-menu-item>
+          </div>
+        </div>
+        <div el-col [span]="3" offset=1>
+          <div class="grid-content bg-purple">
+            <el-menu-item index="4">游戏</el-menu-item>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div el-col [span]="1" offset=1>
-    <div class="grid-content bg-purple">
-      <el-menu-item index="3">音乐</el-menu-item>
+    <div el-col [span]="6" offset=1 class="searchInput">
+      <div class="grid-content bg-purple">
+        <el-input placeholder="请输入关键字..." icon="search" size="mini" [model]="input2">
+        </el-input>
+      </div>
     </div>
-  </div>
-  <div el-col [span]="1" offset=1>
-    <div class="grid-content bg-purple">
-      <el-menu-item index="4">游戏</el-menu-item>
+    <div el-col [span]="4" offset=1>
+      <div class="grid-content bg-purple">
+        <el-submenu index="5" title="admin">
+          <el-menu-item index="5-1">个人信息</el-menu-item>
+          <el-menu-item index="5-2">退出</el-menu-item>
+        </el-submenu>
+        <el-menu-item index="6"><a href="https://github.com/WhatProblem/ng2-lifeStyle" target="_blank">GITHUB</a></el-menu-item>
+      </div>
     </div>
-  </div>
-  <div el-col [span]="4" offset=8>
-    <div class="grid-content bg-purple">
-      <el-submenu index="5" title="admin">
-        <el-menu-item index="5-1">个人信息</el-menu-item>
-        <el-menu-item index="5-2">退出</el-menu-item>
-      </el-submenu>
-      <el-menu-item index="6"><a href="https://github.com/WhatProblem/ng2-lifeStyle" target="_blank">GITHUB</a></el-menu-item>
-    </div>
-  </div>
-</el-menu>
+  </el-menu>
+</div>
 
 <!--<div el-row type="flex" class="row-bg">
   <div el-col [span]="6"><div class="grid-content bg-purple"></div></div>

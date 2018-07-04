@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 
 @Component({
   selector: 'app-headerBar',
   templateUrl: './headerBar.component.html',
-  styleUrls: ['./headerBar.component.scss']
+  styleUrls: ['./headerBar.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class HeaderBarComponent implements OnInit {
