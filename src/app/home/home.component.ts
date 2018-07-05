@@ -1,32 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/opreators';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-
-import { Home, HomeService } from './home.service';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 
 @Component({
-  selector: 'home-list',
+  selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class HomeComponent implements OnInit {
-  public heroes: object = [];
-  private selectedId: number;
 
-  constructor(
-    private service: HomeService,
-    private route: ActivatedRoute
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.heroes = this.service.getHeroes();
-    console.log(this.heroes);
-    let routeParams = this.route.params['value'];
-    this.selectedId = routeParams.id;
-    console.log(this.selectedId);
-    console.log(routeParams);
+
   }
 }

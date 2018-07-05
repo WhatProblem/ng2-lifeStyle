@@ -20,6 +20,7 @@ import { HeaderBarComponent } from './headerBar/headerBar.component';
 
 import { PageNotFoundComponent } from './not-found/page404';
 import { AppRoutesModule } from './appRoutes.module';
+import { HomeModule } from './home/home.module';
 
 import { HeroesModule } from './heroes/heroes.module';
 import { ComposeMessageComponent } from './compose-message.component';
@@ -44,6 +45,8 @@ import '../styles/headings.css';
     FormsModule,
     HttpClientModule,
     // HomeModule,
+    HomeModule,
+    
     HeroesModule,
     LoginRoutingModule,
     AppRoutesModule,

@@ -1,27 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
-import { HomeDetailComponent } from './homeDetail/homeDetail.component';
-
-import { HomeRoutesModule } from './homeRoutes.module';
-import { HomeService } from './home.service';
-
+import { HomeBanComponent } from './homeBanner/homeBan.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
-    HomeRoutesModule
+    FormsModule
   ],
   declarations: [
     HomeComponent,
-    HomeDetailComponent
+    HomeBanComponent
   ],
   providers: [
-    HomeService
+
   ]
 })
 
