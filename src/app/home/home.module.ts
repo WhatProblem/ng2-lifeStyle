@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
-import { HomeBanComponent } from './homeBanner/homeBan.component';
+import { HomeBanComponent } from '../components/home/homeBanner/homeBan.component';
 
 @NgModule({
   imports: [

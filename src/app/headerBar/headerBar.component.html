@@ -10,12 +10,16 @@
       <div el-row>
         <div el-col [span]="3" offset=8>
           <div class="grid-content bg-purple">
-            <el-menu-item index="1">首页</el-menu-item>
+            <a routerLink="/home">
+              <el-menu-item [index]="home">首页</el-menu-item>
+            </a>
           </div>
         </div>
         <div el-col [span]="3" offset=1>
           <div class="grid-content bg-purple">
-            <el-menu-item index="2">影视</el-menu-item>
+            <a routerLink="/film">
+              <el-menu-item [index]="film">影视</el-menu-item>
+            </a>
           </div>
         </div>
         <div el-col [span]="3" offset=1>

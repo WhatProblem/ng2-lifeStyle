@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ComposeMessageComponent } from './compose-message.component';
 import { PageNotFoundComponent } from './not-found/page404';
 
+import { HomeComponent } from './home/home.component';
+import { FilmComponent } from './film/film.component';
+
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { AuthGuard } from './auth-guard.service';
 import { SelectivePreloadingStrategy } from './selective-preloading-strategy';
@@ -23,6 +26,14 @@ const appRoutes: Routes = [
     path: 'crisis-center',
     loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule',
     data: { preload: true }
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'film',
+    component: FilmComponent
   },
   { path: '', redirectTo: '/superheroes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
