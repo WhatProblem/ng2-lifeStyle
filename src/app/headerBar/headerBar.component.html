@@ -47,7 +47,7 @@
     <div el-col [span]="4" offset=1>
       <div class="grid-content bg-purple">
         <el-submenu index="5" title="profile">
-          <a routerLink="/profile">
+          <a routerLink="/profile" (click)="userInfo()">
             <el-menu-item [index]="profile">个人信息</el-menu-item>
           </a>
           <el-menu-item index="5-2">退出</el-menu-item>

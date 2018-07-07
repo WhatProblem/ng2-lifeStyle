@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 // import { HomeModule } from './home/home.module';
 
 import { HeaderBarComponent } from './headerBar/headerBar.component';
+import { LoginedComponent } from './login/login.component';
 
 import { PageNotFoundComponent } from './not-found/page404';
 import { AppRoutesModule } from './appRoutes.module';
@@ -62,6 +63,7 @@ import '../styles/headings.css';
   declarations: [
     AppComponent,
     HeaderBarComponent,
+    LoginedComponent,
     ComposeMessageComponent,
     LoginComponent,
     PageNotFoundComponent

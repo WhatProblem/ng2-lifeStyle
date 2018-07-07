@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { AuthGuard } from './auth-guard.service';
-import { SelectivePreloadingStrategy } from './selective-preloading-strategy';
+import { PreloadRouteService } from './config/preloadRoute.service';
 
 const appRoutes: Routes = [
   {
@@ -24,23 +24,26 @@ const appRoutes: Routes = [
   {
     path: 'crisis-center',
     loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule',
-    data: { preload: true }
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    data: { preload: true }
   },
   {
     path: 'film',
-    loadChildren: 'app/film/film.module#FilmModule'
+    loadChildren: 'app/film/film.module#FilmModule',
+    data: { preload: true }
   },
   {
     path: 'music',
-    loadChildren: 'app/music/music.module#MusicModule'
+    loadChildren: 'app/music/music.module#MusicModule',
+    data: { preload: true }
   },
   {
     path: 'game',
-    loadChildren: 'app/game/game.module#GameModule'
+    loadChildren: 'app/game/game.module#GameModule',
+    data: { preload: true }
   },
   {
     path: 'profile',
@@ -56,7 +59,7 @@ const appRoutes: Routes = [
       appRoutes,
       {
         enableTracing: false, // <-- debugging purposes only
-        preloadingStrategy: SelectivePreloadingStrategy,
+        preloadingStrategy: PreloadRouteService,
         useHash: Boolean(history.pushState) === false,
       }
     )
@@ -66,7 +69,7 @@ const appRoutes: Routes = [
   ],
   providers: [
     CanDeactivateGuard,
-    SelectivePreloadingStrategy
+    PreloadRouteService
   ]
 })
 export class AppRoutesModule { }

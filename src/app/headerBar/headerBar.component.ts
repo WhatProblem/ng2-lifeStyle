@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { EventService } from '../utils/eventService/event.service';
 
 
 @Component({
@@ -18,5 +19,9 @@ export class HeaderBarComponent implements OnInit {
 
   handle(index: string): void {
     console.log(index);
+  }
+
+  userInfo() {
+    EventService.emit('OPEN_LOGIN_MODAL');
   }
 }

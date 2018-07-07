@@ -1,59 +1,55 @@
 import { Injectable } from '@angular/core';
 import {
-  CanActivate, Router,
+  CanActivate,
+  Router,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   CanActivateChild,
   NavigationExtras,
-  CanLoad, Route
+  CanLoad,
+  Route
 } from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Injectable()
-export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
-  constructor(private authService: AuthService, private router: Router) { }
+export class AuthenticateService implements CanActivate, CanActivateChild, CanLoad {
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    let url: string = state.url;
+
+    let url: string = state.url; // 即将要到达的路由
 
     return this.checkLogin(url);
   }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    // 守卫子路由
     return this.canActivate(route, state);
   }
 
   canLoad(route: Route): boolean {
     let url = `/${route.path}`;
-
     return this.checkLogin(url);
   }
 
   checkLogin(url: string): boolean {
-    if (this.authService.isLoggedIn) { return true; }
+    if (this.authService.isLoggedIn) {
+      return true;
+    }
 
-    // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
+    let sessionId = '123456789';
 
-    // Create a dummy session id
-    let sessionId = 123456789;
-
-    // Set our navigation extras object
-    // that contains our global query params and fragment
     let navigationExtras: NavigationExtras = {
-      queryParams: { 'session_id': sessionId },
+      queryParams: { session_id: sessionId },
       fragment: 'anchor'
     };
 
-    // Navigate to the login page with extras
     this.router.navigate(['/login'], navigationExtras);
     return false;
   }
 }
-
-
-/*
-Copyright 2017 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

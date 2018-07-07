@@ -97,6 +97,7 @@
     "@angular/router": "^5.2.10",
     "core-js": "^2.5.5",
     "element-angular": "^0.7.6",
+    "eventemitter2": "^5.0.1",
     "http-server": "^0.11.1",
     "ie-shim": "^0.1.0",
     "reflect-metadata": "^0.1.12",

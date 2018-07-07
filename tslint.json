@@ -17,6 +17,7 @@
     "max-classes-per-file": [true, 5],
     "no-empty": false,
     "member-access": false,
+    "member-ordering": false,
     "no-trailing-whitespace": false,
     // Custom
     "trailing-comma": [false, {"multiline": "always", "singleline": "never"}],

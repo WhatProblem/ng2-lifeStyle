@@ -1,0 +1,18 @@
+<div class="login">
+  <el-dialog [(visible)]="ctrlModal" [center]="true" width="30%">
+    <ng-template #title>
+      <span>用户登录</span>
+    </ng-template>
+    <div>
+      <div class="username">
+        <el-input size="large" placeholder="请输入用户名" [model]="username"></el-input>
+      </div>
+      <div class="password">
+        <el-input size="large" placeholder="请输入密码" [model]="password" native-type="password"></el-input>
+      </div>
+    </div>
+    <ng-template #footer>
+      <el-button type="info" (click)="confirm()">登录</el-button>
+    </ng-template>
+  </el-dialog>
+</div>
