@@ -5,7 +5,6 @@ import { ComposeMessageComponent } from './compose-message.component';
 import { PageNotFoundComponent } from './not-found/page404';
 
 import { HomeComponent } from './home/home.component';
-import { FilmComponent } from './film/film.component';
 
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { AuthGuard } from './auth-guard.service';
@@ -33,7 +32,19 @@ const appRoutes: Routes = [
   },
   {
     path: 'film',
-    component: FilmComponent
+    loadChildren: 'app/film/film.module#FilmModule'
+  },
+  {
+    path: 'music',
+    loadChildren: 'app/music/music.module#MusicModule'
+  },
+  {
+    path: 'game',
+    loadChildren: 'app/game/game.module#GameModule'
+  },
+  {
+    path: 'profile',
+    loadChildren: 'app/profile/profile.module#ProfileModule'
   },
   { path: '', redirectTo: '/superheroes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

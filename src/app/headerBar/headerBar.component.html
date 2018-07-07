@@ -24,12 +24,16 @@
         </div>
         <div el-col [span]="3" offset=1>
           <div class="grid-content bg-purple">
-            <el-menu-item index="3">音乐</el-menu-item>
+            <a routerLink="/music">
+              <el-menu-item [index]="music">音乐</el-menu-item>
+            </a>
           </div>
         </div>
         <div el-col [span]="3" offset=1>
           <div class="grid-content bg-purple">
-            <el-menu-item index="4">游戏</el-menu-item>
+            <a routerLink="/game">
+              <el-menu-item [index]="game">游戏</el-menu-item>
+            </a>
           </div>
         </div>
       </div>
@@ -42,8 +46,10 @@
     </div>
     <div el-col [span]="4" offset=1>
       <div class="grid-content bg-purple">
-        <el-submenu index="5" title="admin">
-          <el-menu-item index="5-1">个人信息</el-menu-item>
+        <el-submenu index="5" title="profile">
+          <a routerLink="/profile">
+            <el-menu-item [index]="profile">个人信息</el-menu-item>
+          </a>
           <el-menu-item index="5-2">退出</el-menu-item>
         </el-submenu>
         <el-menu-item index="6"><a href="https://github.com/WhatProblem/ng2-lifeStyle" target="_blank">GITHUB</a></el-menu-item>

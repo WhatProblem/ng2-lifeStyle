@@ -22,7 +22,6 @@ import { PageNotFoundComponent } from './not-found/page404';
 import { AppRoutesModule } from './appRoutes.module';
 
 import { HomeModule } from './home/home.module';
-import { FilmModule } from './film/film.module';
 
 import { HeroesModule } from './heroes/heroes.module';
 import { ComposeMessageComponent } from './compose-message.component';
@@ -47,7 +46,6 @@ import '../styles/headings.css';
     FormsModule,
     HttpClientModule,
     HomeModule,
-    FilmModule,
     
     HeroesModule,
     LoginRoutingModule,
