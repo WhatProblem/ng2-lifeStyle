@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-
 @Component({
   selector: 'app-homeBan',
   templateUrl: './homeBan.component.html',
