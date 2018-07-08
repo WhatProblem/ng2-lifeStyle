@@ -31,6 +31,8 @@ import { LoginComponent } from './login.component';
 
 import { DialogService } from './dialog.service';
 import { NgEventService } from './utils/eventService/ngEvent.service';
+import { AuthService } from './config/auth.service';
+import { AuthenticateService } from './config/authenticate.service';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -76,7 +78,9 @@ import '../styles/headings.css';
   providers: [
     environment.ENV_PROVIDERS,
     DialogService,
-    NgEventService
+    NgEventService,
+    AuthService,
+    AuthenticateService
   ]
 })
 export class AppModule { }

@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { EventService } from '../utils/eventService/event.service';
 import { NgEventService } from '../utils/eventService/ngEvent.service';
-
+import { AuthService } from '../config/auth.service';
+import { AuthenticateService } from '../config/authenticate.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,11 @@ export class LoginedComponent implements OnInit {
   private username: string = '';
   private password: string = '';
 
-  constructor(public ngEventService: NgEventService) { }
+  constructor(
+    public ngEventService: NgEventService,
+    public authService: AuthService,
+    public router: Router
+  ) { }
 
   ngOnInit() {
     let self = this;
@@ -33,7 +39,25 @@ export class LoginedComponent implements OnInit {
     });
   }
 
-  confirm() {
+  login() {
+    this.authService.redirectUrl = '/profile';
     this.ctrlModal = false;
+    // this.authService.login().subscribe(() => {
+    //   if (this.authService.isLoggedIn) {
+    //     let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/profile';
+    //     this.router.navigate([redirect]);
+    //   }
+    // });
+
+    let self = this;
+    new Promise((resolve, reject) => {
+      self.authService.login();
+      resolve();
+    }).then(() => {
+      if (this.authService.isLoggedIn) {
+        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/profile';
+        this.router.navigate([redirect]);
+      }
+    });
   }
 }

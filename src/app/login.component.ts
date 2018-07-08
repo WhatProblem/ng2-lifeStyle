@@ -1,7 +1,9 @@
-import { Component }        from '@angular/core';
-import { Router,
-         NavigationExtras } from '@angular/router';
-import { AuthService }      from './auth.service';
+import { Component } from '@angular/core';
+import {
+  Router,
+  NavigationExtras
+} from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Component({
   template: `
@@ -28,6 +30,7 @@ export class LoginComponent {
 
     this.authService.login().subscribe(() => {
       this.setMessage();
+      console.log(this.authService.redirectUrl);
       if (this.authService.isLoggedIn) {
         // Get the redirect URL from our auth service
         // If no redirect has been set, use the default

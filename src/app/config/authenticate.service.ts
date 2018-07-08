@@ -10,13 +10,15 @@ import {
   Route
 } from '@angular/router';
 import { AuthService } from './auth.service';
+import { NgEventService } from '../utils/eventService/ngEvent.service';
 
 @Injectable()
 export class AuthenticateService implements CanActivate, CanActivateChild, CanLoad {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    public ngEventService: NgEventService
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
@@ -31,8 +33,11 @@ export class AuthenticateService implements CanActivate, CanActivateChild, CanLo
     return this.canActivate(route, state);
   }
 
+  // 路由守卫：未登录被保护模块
   canLoad(route: Route): boolean {
     let url = `/${route.path}`;
+    console.log(url);
+    console.log('++++++++++++++++');
     return this.checkLogin(url);
   }
 
@@ -41,15 +46,26 @@ export class AuthenticateService implements CanActivate, CanActivateChild, CanLo
       return true;
     }
 
-    this.authService.redirectUrl = url;
-    let sessionId = '123456789';
+    // this.authService.redirectUrl = url;
+    // let sessionId = '123456789';
 
-    let navigationExtras: NavigationExtras = {
-      queryParams: { session_id: sessionId },
-      fragment: 'anchor'
+    // let navigationExtras: NavigationExtras = {
+    //   queryParams: { session_id: sessionId },
+    //   fragment: 'anchor'
+    // };
+
+    // this.router.navigate(['/login'], navigationExtras);
+    // this.router.navigate(['./login']);
+    
+    // 弹出登录框
+    let obj = {
+      id: 1,
+      name: 'ws',
+      eventName: 'OPEN_LOGIN_MODAL'
     };
 
-    this.router.navigate(['/login'], navigationExtras);
+    // angular eventEmit
+    this.ngEventService.eventEmit.emit(obj);
     return false;
   }
 }

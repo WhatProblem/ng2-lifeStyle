@@ -47,19 +47,15 @@
     <div el-col [span]="4" offset=1>
       <div class="grid-content bg-purple">
         <el-submenu index="5" title="profile">
-          <a routerLink="/profile" (click)="userInfo()">
+          <a (click)="userInfo()">
             <el-menu-item [index]="profile">个人信息</el-menu-item>
           </a>
-          <el-menu-item index="5-2">退出</el-menu-item>
+          <div (click)="logOut()">
+            <el-menu-item index="5-2">退出</el-menu-item>
+          </div>
         </el-submenu>
         <el-menu-item index="6"><a href="https://github.com/WhatProblem/ng2-lifeStyle" target="_blank">GITHUB</a></el-menu-item>
       </div>
     </div>
   </el-menu>
 </div>
-
-<!--<div el-row type="flex" class="row-bg">
-  <div el-col [span]="6"><div class="grid-content bg-purple"></div></div>
-  <div el-col [span]="6"><div class="grid-content bg-purple-light"></div></div>
-  <div el-col [span]="6"><div class="grid-content bg-purple"></div></div>
-</div>-->

@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { AuthGuard } from './auth-guard.service';
+
+import { AuthenticateService } from './config/authenticate.service';
 import { PreloadRouteService } from './config/preloadRoute.service';
 
 const appRoutes: Routes = [
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: 'app/profile/profile.module#ProfileModule'
+    loadChildren: 'app/profile/profile.module#ProfileModule',
+    canLoad: [AuthenticateService]
   },
   { path: '', redirectTo: '/superheroes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

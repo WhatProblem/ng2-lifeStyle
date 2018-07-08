@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { EventService } from '../utils/eventService/event.service';
 import { NgEventService } from '../utils/eventService/ngEvent.service';
+import { AuthService } from '../config/auth.service';
 
 
 @Component({
@@ -12,7 +15,12 @@ import { NgEventService } from '../utils/eventService/ngEvent.service';
 
 export class HeaderBarComponent implements OnInit {
 
-  constructor(public ngEventService: NgEventService) { }
+  constructor(
+    public ngEventService: NgEventService,
+    public authService: AuthService,
+    public router: Router,
+    public location: Location
+  ) { }
 
   ngOnInit() {
 
@@ -22,17 +30,38 @@ export class HeaderBarComponent implements OnInit {
     console.log(index);
   }
 
+  // 登录
   userInfo() {
-    // nodejs eventEmitter2
-    // EventService.emit('OPEN_LOGIN_MODAL');
-    
-    let obj = {
-      id: 1,
-      name: 'ws',
-      eventName: 'OPEN_LOGIN_MODAL'
-    };
+    if (this.authService.isLoggedIn) {
+      this.router.navigate(['./profile']);
+    } else {
+      // nodejs eventEmitter2
+      // EventService.emit('OPEN_LOGIN_MODAL');
 
-    // angular eventEmit
-    this.ngEventService.eventEmit.emit(obj);
+      let obj = {
+        id: 1,
+        name: 'ws',
+        eventName: 'OPEN_LOGIN_MODAL'
+      };
+
+      // angular eventEmit
+      this.ngEventService.eventEmit.emit(obj);
+    }
+  }
+
+  // 退出
+  logOut() {
+    let self = this;
+    let curUrl = this.location.path();
+    if (curUrl.indexOf('profile') !== -1) {
+      new Promise((resolve, reject) => {
+        self.authService.logOut();
+        resolve();
+      }).then(() => {
+        this.router.navigate(['/home']);
+      });
+    } else {
+      this.authService.logOut();
+    }
   }
 }

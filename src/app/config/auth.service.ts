@@ -11,11 +11,18 @@ export class AuthService {
 
   redirectUrl: string;
 
-  login(): Observable<boolean> {
-    return Observable.of(true).delay(1000).do(val => this.isLoggedIn = true);
+  // login(): Observable<boolean> {
+  //   return Observable.of(true).delay(1000).do(() => this.isLoggedIn = true);
+  // }
+  login() {
+    this.isLoggedIn = true;
   }
 
-  logout(): void {
+  // logout(): void {
+  //   this.isLoggedIn = false;
+  // }
+
+  logOut() {
     this.isLoggedIn = false;
   }
 }
