@@ -30,6 +30,7 @@ import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 
 import { DialogService } from './dialog.service';
+import { NgEventService } from './utils/eventService/ngEvent.service';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -74,7 +75,8 @@ import '../styles/headings.css';
    */
   providers: [
     environment.ENV_PROVIDERS,
-    DialogService
+    DialogService,
+    NgEventService
   ]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { EventService } from '../utils/eventService/event.service';
+import { NgEventService } from '../utils/eventService/ngEvent.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { EventService } from '../utils/eventService/event.service';
 
 export class HeaderBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public ngEventService: NgEventService) { }
 
   ngOnInit() {
 
@@ -22,6 +23,16 @@ export class HeaderBarComponent implements OnInit {
   }
 
   userInfo() {
-    EventService.emit('OPEN_LOGIN_MODAL');
+    // nodejs eventEmitter2
+    // EventService.emit('OPEN_LOGIN_MODAL');
+    
+    let obj = {
+      id: 1,
+      name: 'ws',
+      eventName: 'OPEN_LOGIN_MODAL'
+    };
+
+    // angular eventEmit
+    this.ngEventService.eventEmit.emit(obj);
   }
 }
