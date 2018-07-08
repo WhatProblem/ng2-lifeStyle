@@ -36,8 +36,6 @@ export class AuthenticateService implements CanActivate, CanActivateChild, CanLo
   // 路由守卫：未登录被保护模块
   canLoad(route: Route): boolean {
     let url = `/${route.path}`;
-    console.log(url);
-    console.log('++++++++++++++++');
     return this.checkLogin(url);
   }
 
