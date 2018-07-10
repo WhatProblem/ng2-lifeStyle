@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WsHttpInterceptor } from './sdk/http/httpInterceptor';
 // import element-module
 import { ElModule } from 'element-angular';
 // if you use webpack, import style
@@ -50,7 +51,7 @@ import '../styles/headings.css';
     FormsModule,
     HttpClientModule,
     HomeModule,
-    
+
     HeroesModule,
     LoginRoutingModule,
     AppRoutesModule,
@@ -80,7 +81,12 @@ import '../styles/headings.css';
     DialogService,
     NgEventService,
     AuthService,
-    AuthenticateService
+    AuthenticateService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: WsHttpInterceptor,
+      multi: true
+    }
   ]
 })
 export class AppModule { }
