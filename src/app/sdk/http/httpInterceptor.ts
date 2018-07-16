@@ -15,16 +15,16 @@ export class WsHttpInterceptor implements HttpInterceptor {
     const authReq = req.clone({
       headers: req.headers.set('Authorization', 'token <your GitHub token>')
     });
-    console.log(authReq);
-    return next.handle(req);
-    // return next.handle(req).map(event => {
-    //   if (event instanceof HttpResponse) {
-    //     if (event.status === 401) {
-    //       // JWT expired, go to login
-    //     }
-    //   }
-    //   return event;
-    // });
+    // console.log(authReq);
+    // return next.handle(req);
+    return next.handle(req).map(event => {
+      if (event instanceof HttpResponse) {
+        if (event.status === 401) {
+          // JWT expired, go to login
+        }
+      }
+      return event;
+    });
   }
 }
 

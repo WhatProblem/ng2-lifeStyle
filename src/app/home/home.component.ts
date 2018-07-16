@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -12,14 +12,12 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
   private course: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private homeService: HomeService
+  ) { }
 
   ngOnInit() {
-    // this.http.get('https://api.github.com/users/seeschweiler').subscribe(data => {
-    //   console.log(data['login']);
-    // }, err => {
-    //   console.log(err);
-    // });
 
     // const req = this.http.post('http://jsonplaceholder.typicode.com/posts', {
     //   title: 'foo',
@@ -38,8 +36,13 @@ export class HomeComponent implements OnInit {
     //   user_id: '0001'
     // };
 
-    // this.http.get('getTestData', param).subscribe(data => {
-    //   console.log(data);
-    // });
+    let param = {
+      user_id: '0001',
+      pages_index: 1,
+      pages_total: 5
+    };
+    this.homeService.getGameTotals('get', 'getTestData', param).then(result => {
+      console.log(result);
+    });
   }
 }
