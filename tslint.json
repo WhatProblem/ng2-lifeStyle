@@ -11,6 +11,7 @@
     "node_modules/codelyzer"
   ],
   "rules": {
+    "forin": false,
     "object-literal-shorthand": false,
     "prefer-const": false,
     "no-unused-expression": [true, "allow-fast-null-checks"],

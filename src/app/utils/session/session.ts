@@ -10,8 +10,8 @@
 
 let json = {};
 export const session = {
-  
-  get: function (key) {
+
+  get: function(key) {
     if (!json.hasOwnProperty(key)) {
       const valueStr = sessionStorage.getItem(key) || localStorage.getItem(key);
       if (valueStr) {
@@ -21,7 +21,7 @@ export const session = {
     return json[key];
   },
 
-  put: function (key, value, isPersistence = false) {
+  put: function(key, value, isPersistence = false) {
     if (value === null || value === undefined || isNaN(value)) {
       this.remove(key);
       return;
@@ -35,7 +35,7 @@ export const session = {
     }
   },
 
-  clear: function (isAlsoClearPersisitent) {
+  clear: function(isAlsoClearPersisitent) {
     json = {};
     sessionStorage.clear();
     if (isAlsoClearPersisitent) {
@@ -43,13 +43,13 @@ export const session = {
     }
   },
 
-  remove: function (key) {
+  remove: function(key) {
     delete json[key];
     sessionStorage.removeItem(key);
     localStorage.removeItem(key);
   },
 
-  pop: function (key) {
+  pop: function(key) {
     const val = this.get(key);
     this.remove(key);
     return val;

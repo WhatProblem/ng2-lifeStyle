@@ -1,34 +1,55 @@
 .wsHeader {
-  .el-menu--horizontal .el-menu-item {
-    font-size: 16px;
-    font-weight: bold;
-  }
+  height: 60px;
+  background: rgb(84, 92, 100);
+  color: #fff;
+  font-size: 16px;
 
-  .el-menu--horizontal .el-submenu .el-submenu__title {
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  .el-menu--horizontal .el-submenu .el-menu-item {
-    font-size: 14px;
-  }
-
-  .searchInput {
-    height: 100%;
-    line-height: 60px;
-  }
-
-  .wsLogo {
+  .secHeader {
     height: 60px;
+    line-height: 60px;
 
     .wsAvatar {
-      height: 100%;
+      width: 45px;
+      height: 45px;
+      position: relative;
+      top: 8px;
 
       img {
-        height: 45px;
-        border-radius: 50%;
-        position: relative;
-        top: 10px;
+        width: 100%;
+        height: 100%;
+        border-radius: 45%;
+      }
+    }
+
+    a {
+      display: inline-block;
+      height: 57px;
+      line-height: 60px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 0 16px;
+    }
+
+    a.active {
+      color: rgb(255, 208, 75);
+      border-bottom: 3px solid rgb(255, 208, 75);
+    }
+
+    .el-dropdown {
+      color: #fff;
+      font-size: 16px;
+
+      .el-dropdown-menu {
+        background: rgb(84, 92, 100);
+
+        .el-dropdown-menu__item {
+          color: #fff;
+
+          &:hover {
+            background: #393939;
+          }
+        }
       }
     }
   }

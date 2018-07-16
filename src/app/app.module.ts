@@ -5,6 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WsHttpInterceptor } from './sdk/http/httpInterceptor';
+import { HttpService } from './sdk/http/http.service';
 // import element-module
 import { ElModule } from 'element-angular';
 // if you use webpack, import style
@@ -82,6 +83,7 @@ import '../styles/headings.css';
     NgEventService,
     AuthService,
     AuthenticateService,
+    HttpService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: WsHttpInterceptor,

@@ -5,7 +5,6 @@ import { EventService } from '../utils/eventService/event.service';
 import { NgEventService } from '../utils/eventService/ngEvent.service';
 import { AuthService } from '../config/auth.service';
 
-
 @Component({
   selector: 'app-headerBar',
   templateUrl: './headerBar.component.html',
@@ -14,6 +13,17 @@ import { AuthService } from '../config/auth.service';
 })
 
 export class HeaderBarComponent implements OnInit {
+
+  private data: any[] = [
+    {
+      value: 'userInfo',
+      label: '个人信息',
+    },
+    {
+      value: 'logOut',
+      label: '退出',
+    }
+  ];
 
   constructor(
     public ngEventService: NgEventService,
@@ -26,8 +36,13 @@ export class HeaderBarComponent implements OnInit {
 
   }
 
-  handle(index: string): void {
-    console.log(index);
+  handle(event: any): void {
+    console.log(event);
+    if (event.value === 'userInfo') {
+      this.userInfo();
+    } else if (event.value === 'logOut') {
+      this.logOut();
+    }
   }
 
   // 登录

@@ -1,61 +1,57 @@
 <div class="wsHeader">
-  <el-menu [model]="0" (modelChange)="handle($event)" class="el-menu-demo" mode="horizontal" background-color="#545c64" active-text-color="#ffd04b"
-    text-color="#fff">
-    <div el-col [span]="1" offset=1 class="wsLogo">
-      <div class="wsAvatar">
-        <img src="../../assets/img/wsAvatar.jpg" alt="">
+  <div el-row>
+    <div el-col [span]="2" offset=1>
+      <div class="grid-content bg-purple" class="secHeader">
+        <div class="wsAvatar">
+          <img src="../../assets/img/wsAvatar.jpg" alt="">
+        </div>
       </div>
     </div>
-    <div el-col [span]="10">
-      <div el-row>
-        <div el-col [span]="3" offset=8>
-          <div class="grid-content bg-purple">
-            <a routerLink="/home">
-              <el-menu-item [index]="home">首页</el-menu-item>
-            </a>
+    <div el-col [span]="6" offset="3">
+      <div class="grid-content bg-purple" class="secHeader">
+        <div el-row type="flex" class="row-bg" justify="center">
+          <div el-col [span]="6">
+            <div class="grid-content bg-purple">
+              <a routerLink="/home" routerLinkActive="active">主页</a>
+            </div>
           </div>
-        </div>
-        <div el-col [span]="3" offset=1>
-          <div class="grid-content bg-purple">
-            <a routerLink="/film">
-              <el-menu-item [index]="film">影视</el-menu-item>
-            </a>
+          <div el-col span="6">
+            <div class="grid-content bg-purple">
+              <a routerLink="/film" routerLinkActive="active">视频</a>
+            </div>
           </div>
-        </div>
-        <div el-col [span]="3" offset=1>
-          <div class="grid-content bg-purple">
-            <a routerLink="/music">
-              <el-menu-item [index]="music">音乐</el-menu-item>
-            </a>
+          <div el-col span="6">
+            <div class="grid-content bg-purple">
+              <a routerLink="/music" routerLinkActive="active">音乐</a>
+            </div>
           </div>
-        </div>
-        <div el-col [span]="3" offset=1>
-          <div class="grid-content bg-purple">
-            <a routerLink="/game">
-              <el-menu-item [index]="game">游戏</el-menu-item>
-            </a>
+          <div el-col span="6">
+            <div class="grid-content bg-purple">
+              <a routerLink="/game" routerLinkActive="active">游戏</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div el-col [span]="6" offset=1 class="searchInput">
-      <div class="grid-content bg-purple">
-        <el-input placeholder="请输入关键字..." icon="search" size="mini" [model]="input2">
-        </el-input>
+    <div el-col [span]="6" offset=1>
+      <div class="grid-content bg-purple" class="secHeader">
+        <div class="grid-content bg-purple">
+          <el-input placeholder="请输入关键字..." icon="search" size="mini" [model]="input2">
+          </el-input>
+        </div>
       </div>
     </div>
-    <div el-col [span]="4" offset=1>
-      <div class="grid-content bg-purple">
-        <el-submenu index="5" title="profile">
-          <a (click)="userInfo()">
-            <el-menu-item [index]="profile">个人信息</el-menu-item>
-          </a>
-          <div (click)="logOut()">
-            <el-menu-item index="5-2">退出</el-menu-item>
-          </div>
-        </el-submenu>
-        <el-menu-item index="6"><a href="https://github.com/WhatProblem/ng2-lifeStyle" target="_blank">GITHUB</a></el-menu-item>
+    <div el-col [span]="2" offset=1>
+      <div class="grid-content bg-purple" class="secHeader">
+        <el-dropdown [model]="data" (selected)="handle($event)">
+          个人信息
+        </el-dropdown>
       </div>
     </div>
-  </el-menu>
+    <div el-col [span]="2">
+      <div class="grid-content bg-purple" class="secHeader">
+        <a href=" " target="_blank">GITHUB</a>
+      </div>
+    </div>
+  </div>
 </div>
