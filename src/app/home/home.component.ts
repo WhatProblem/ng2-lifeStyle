@@ -41,8 +41,8 @@ export class HomeComponent implements OnInit {
       pages_index: 1,
       pages_total: 5
     };
-    this.homeService.getGameTotals('get', 'getTestData', param).then(result => {
-      console.log(result);
-    });
+    // this.homeService.getGameTotals('get', 'getTestData', param).then(result => {
+    //   console.log(result);
+    // });
   }
 }

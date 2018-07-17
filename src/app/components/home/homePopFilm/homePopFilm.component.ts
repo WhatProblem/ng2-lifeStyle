@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'home-popFilm',
@@ -12,6 +13,20 @@ export class HomePopFilmComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    let swipers = new Swiper('.swiper-container', {
+      slidesPerView: 6,
+      spaceBetween: 30,
+      slidesPerGroup: 6,
+      loop: false,
+      loopFillGroupWithBlank: true,
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable: true,
+      // },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
   }
 }

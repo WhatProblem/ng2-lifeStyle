@@ -14,11 +14,15 @@ export class HomeBanComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    this.slidePlay();
   }
 
   slidePlay() {
     let swiper = new Swiper('.swiper-container', {
+      loop: true,
+      autoplay: {
+        delay: 3000
+      },
       spaceBetween: 30,
       effect: 'fade',
       pagination: {
