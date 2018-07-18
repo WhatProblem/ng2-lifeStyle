@@ -1,12 +1,16 @@
 <div class="homePopFilm">
-  <div class="title">高评热片</div>
+  <div class="homeFilmtitle">高评热片></div>
   <div class="popFilmList">
-    <div class="swiper-container">
+    <div class="swiper-container" id="homePopFilm">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="../../../../assets/img/homePopFilm/1.jpg"/>
+          <div class="homeFilmPoster">
+            <img src="../../../../assets/img/homePopFilm/1.jpg" />
+            <div class="filmName">影片名称</div>
+            <div class="filmScore">10.0</div>
+          </div>
         </div>
-        <div class="swiper-slide">
+        <!--<div class="swiper-slide">
           <img src="../../../../assets/img/homePopFilm/2.jpg"/>
         </div>
         <div class="swiper-slide">
@@ -38,13 +42,13 @@
         </div>
         <div class="swiper-slide">
           <img src="../../../../assets/img/homePopFilm/12.jpg"/>
-        </div>
+        </div>-->
       </div>
       <!-- Add Pagination -->
       <!--<div class="swiper-pagination"></div>-->
       <!-- Add Arrows -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next" id="homeFilmNext"></div>
+      <div class="swiper-button-prev" id="homeFilmPrev"></div>
     </div>
   </div>
 </div>

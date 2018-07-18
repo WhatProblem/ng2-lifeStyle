@@ -13,7 +13,7 @@ export class HomePopFilmComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    let swipers = new Swiper('.swiper-container', {
+    let swipers = new Swiper('#homePopFilm', {
       slidesPerView: 6,
       spaceBetween: 30,
       slidesPerGroup: 6,
@@ -24,8 +24,8 @@ export class HomePopFilmComponent implements OnInit {
       //   clickable: true,
       // },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '#homeFilmNext',
+        prevEl: '#homeFilmPrev',
       },
     });
   }

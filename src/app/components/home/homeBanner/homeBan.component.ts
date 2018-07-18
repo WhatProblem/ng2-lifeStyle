@@ -18,20 +18,22 @@ export class HomeBanComponent implements OnInit {
   }
 
   slidePlay() {
-    let swiper = new Swiper('.swiper-container', {
+    let swiper = new Swiper('#homeBan', {
       loop: true,
       autoplay: {
-        delay: 3000
+        delay: 3000,
+        disableOnInteraction: false,
+        autoplayDisableOnInteraction: false
       },
       spaceBetween: 30,
       effect: 'fade',
       pagination: {
-        el: '.swiper-pagination',
+        el: '#homeBanPagi',
         clickable: true,
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '#homeBanNext',
+        prevEl: '#homeBanNext',
       },
     });
   }
