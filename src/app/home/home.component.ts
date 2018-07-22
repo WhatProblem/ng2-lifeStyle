@@ -10,6 +10,7 @@ import { HomeService } from './home.service';
 })
 
 export class HomeComponent implements OnInit {
+  public popFilm: object[] = [];
   private course: any;
 
   constructor(
@@ -30,19 +31,18 @@ export class HomeComponent implements OnInit {
     //   err => {
     //     console.log('Error occured');
     //   });
-    // let param = {
-    //   pages_index: '1',
-    //   pages_total: '5',
-    //   user_id: '0001'
-    // };
 
-    let param = {
-      user_id: '0001',
-      pages_index: 1,
-      pages_total: 5
-    };
-    // this.homeService.getGameTotals('get', 'getTestData', param).then(result => {
-    //   console.log(result);
-    // });
+    this.getHomePopFilm();
+  }
+
+  // homePopFilm数据获取
+  getHomePopFilm() {
+    let self = this;
+    let param = { film_score: '7.0' };
+    this.homeService.getScoreFilms('get', 'homePopFilm', param).then(result => {
+      if (result['code'] === 200) {
+        self.popFilm = result['data']['data'];
+      }
+    });
   }
 }

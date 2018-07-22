@@ -20,4 +20,13 @@ export class HomeService {
     });
   }
 
+  /**
+   * @description: 获取homePopFilm部分数据
+   * @param {film_score} 查询评分
+   */
+  getScoreFilms(methods: string, url: string, param?: any): Promise<any> {
+    return this.httpService.request(methods, url, param).then(res => {
+      return res;
+    });
+  }
 }

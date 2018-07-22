@@ -3,5 +3,10 @@
     "wsUrl": "game/allGameRoleList",
     "params": "pages_index, pages_total, user_id",
     "content": "测试请求接口封装"
+  },
+  "homePopFilm": {
+    "wsUrl": "home/homePopFilm",
+    "param": "film_score",
+    "content": "homePopFilm部分数据 home部分"
   }
 }

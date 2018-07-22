@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import Swiper from 'swiper';
 import { SuspensionComponent } from '../../../suspension/suspension.component';
 
@@ -10,22 +10,24 @@ import { SuspensionComponent } from '../../../suspension/suspension.component';
 })
 
 export class HomePopFilmComponent implements OnInit {
+  public popFilmData: object[] = [];
   private suspensionCtrl: boolean = false;
-  private homePopPoster: object[] = [
-    { filmSrc: '../../../../assets/img/homePopFilm/1.jpg', filmName: '影片1', filmScore: '9.8' },
-    { filmSrc: '../../../../assets/img/homePopFilm/2.jpg', filmName: '影片2', filmScore: '9.8' },
-    { filmSrc: '../../../../assets/img/homePopFilm/3.jpg', filmName: '影片3', filmScore: '9.8' },
-    { filmSrc: '../../../../assets/img/homePopFilm/4.jpg', filmName: '影片4', filmScore: '9.8' },
-    { filmSrc: '../../../../assets/img/homePopFilm/5.jpg', filmName: '影片5', filmScore: '9.8' },
-    { filmSrc: '../../../../assets/img/homePopFilm/6.jpg', filmName: '影片6', filmScore: '9.8' },
-    { filmSrc: '../../../../assets/img/homePopFilm/7.jpg', filmName: '影片7', filmScore: '9.8' },
-    { filmSrc: '../../../../assets/img/homePopFilm/8.jpg', filmName: '影片8', filmScore: '9.8' },
-    { filmSrc: '../../../../assets/img/homePopFilm/9.jpg', filmName: '影片9', filmScore: '9.8' }
-  ];
+  private homePopPoster: object[] = [];
 
   constructor() { }
 
+  @Input() set popFilm(data) {
+    if (data.length) {
+      this.homePopPoster = data;
+      this.initSwiper();
+    }
+  }
+
   ngOnInit() {
+
+  }
+
+  initSwiper() {
     Promise.resolve().then(() => {
       let swipers = new Swiper('#homePopFilm', {
         slidesPerView: 6,

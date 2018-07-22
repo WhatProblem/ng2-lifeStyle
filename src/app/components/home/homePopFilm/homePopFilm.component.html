@@ -5,9 +5,9 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide" *ngFor="let filmPoster of homePopPoster;let i=index">
           <div class="homeFilmPoster" (mouseenter)="showSuspension($event, i)">
-            <img [src]="filmPoster.filmSrc" />
-            <div class="filmName">{{filmPoster.filmName}}</div>
-            <div class="filmScore">{{filmPoster.filmScore}}</div>
+            <img [src]="filmPoster.film_detail_poster" />
+            <div class="filmName">{{filmPoster.film_name}}</div>
+            <div class="filmScore">{{filmPoster.film_score}}</div>
           </div>
         </div>
       </div>
