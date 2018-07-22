@@ -1,0 +1,48 @@
+app-suspension {
+  width: 100%;
+  height: 100%;
+
+  .el-card {
+    background: #393939;
+    color: #fff;
+
+    .el-card__header {
+      padding: 0 10px;
+    }
+
+    .el-card__body {
+      padding: 10px;
+      font-size: 14px;
+
+      .introduce {
+        max-height: 170px;
+        overflow: hidden;
+      }
+    }
+
+    .item {
+      margin: 5px 0px;
+    }
+
+    .scoreOrFav,
+    .lockOrPlay {
+      display: flex;
+      justify-content: space-between;
+      color: #ffd04b;
+
+      .scores,
+      .fav {
+        cursor: pointer;
+      }
+
+      .lock,
+      .play {
+        cursor: pointer;
+
+        .playBtn {
+          padding: 0 0px 2px 4px;
+        }
+      }
+    }
+  }
+}

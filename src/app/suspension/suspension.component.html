@@ -1,0 +1,39 @@
+<el-card class="box-card">
+  <ng-template #header>
+    <div class="clearfix">
+      <span style="line-height: 36px;">影片名称</span>
+    </div>
+  </ng-template>
+  <div class="text item">
+    <div><span>标签：</span><span>神话,爱情,玄幻</span></div>
+  </div>
+  <div class="text item">
+    <div><span>年代：</span><span>1993</span></div>
+  </div>
+  <div class="text item">
+    <div><span>主演：</span><span>周星驰,朱茵,吴孟达,罗家英</span></div>
+  </div>
+  <div class="text item introduce">
+    <div><span>简介：</span><span title="提示内容">《大话西游》是由周星驰彩星电影公司和西安电影制片厂联合摄制的爱情悲喜剧电影，由刘镇伟执导，周星驰、朱茵、吴孟达、莫文蔚等主演。</span></div>
+  </div>
+  <div class="text item">
+    <div class="scoreOrFav">
+      <div>
+        <span class="el-icon-star-on scores"></span><span class="el-icon-star-off scores"></span>
+      </div>
+      <div class="fav">
+        <span>未收藏<i class="myFont ng2-lifeStyle-shoucang1"></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="text item">
+    <div class="lockOrPlay">
+      <div class="lock">
+        <span><i class="myFont ng2-lifeStyle-suo1"></i>加锁</span>
+      </div>
+      <div class="play">
+        <el-button class="playBtn" [plain]="true" type="info" size="mini">播放<i class="myFont ng2-lifeStyle-bofang-shipin el-icon--right"></i></el-button>
+      </div>
+    </div>
+  </div>
+</el-card>

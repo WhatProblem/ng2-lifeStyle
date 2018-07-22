@@ -9,6 +9,7 @@ import { ElModule } from 'element-angular';
 // if you use webpack, import style
 import 'element-angular/theme/index.css';
 
+import { SuspensionModule } from '../suspension/suspension.module';
 import { HomeService } from './home.service';
 import { HomeComponent } from './home.component';
 import { HomeBanComponent } from '../components/home/homeBanner/homeBan.component';
@@ -20,6 +21,7 @@ import { HomePopFilmComponent } from '../components/home/homePopFilm/homePopFilm
     FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
+    SuspensionModule,
     ElModule.forRoot(),
   ],
   declarations: [

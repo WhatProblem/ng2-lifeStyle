@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "myFont";
+  src: url('//at.alicdn.com/t/font_758096_we3lqmp2idl.eot?t=1532254269526'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_758096_we3lqmp2idl.eot?t=1532254269526#iefix') format('embedded-opentype'), url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'), url('//at.alicdn.com/t/font_758096_we3lqmp2idl.ttf?t=1532254269526') format('truetype'), url('//at.alicdn.com/t/font_758096_we3lqmp2idl.svg?t=1532254269526#myFont') format('svg'); /* iOS 4.1- */
+}
+
+.myFont {
+  font-family: "myFont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ng2-lifeStyle-goumai:before {
+  content: "\e603";
+}
+
+.ng2-lifeStyle-shoucang:before {
+  content: "\e60a";
+}
+
+.ng2-lifeStyle-yigoumai:before {
+  content: "\e60e";
+}
+
+.ng2-lifeStyle-suo:before {
+  content: "\e657";
+}
+
+.ng2-lifeStyle-suo1:before {
+  content: "\e658";
+}
+
+.ng2-lifeStyle-bofang-shipin:before {
+  content: "\e604";
+}
+
+.ng2-lifeStyle-shoucang1:before {
+  content: "\e64f";
+}
+
+.ng2-lifeStyle-icon-playVideo:before {
+  content: "\e615";
+}
