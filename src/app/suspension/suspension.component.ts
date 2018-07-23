@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-suspension',
@@ -7,8 +7,15 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class SuspensionComponent implements OnInit {
+  public detailData: object = null;
 
   constructor() { }
+
+  @Input() set suspension(data: object) {
+    if (data) {
+      this.detailData = data;
+    }
+  }
 
   ngOnInit() {
 

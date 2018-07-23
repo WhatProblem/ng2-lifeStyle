@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   // homePopFilm数据获取
   getHomePopFilm() {
     let self = this;
-    let param = { film_score: '7.0' };
+    let param = { film_score: '1.0' };
     this.homeService.getScoreFilms('get', 'homePopFilm', param).then(result => {
       if (result['code'] === 200) {
         self.popFilm = result['data']['data'];

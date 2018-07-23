@@ -11,6 +11,7 @@ import { SuspensionComponent } from '../../../suspension/suspension.component';
 
 export class HomePopFilmComponent implements OnInit {
   public popFilmData: object[] = [];
+  public homeFilmPopData: object = null;
   private suspensionCtrl: boolean = false;
   private homePopPoster: object[] = [];
 
@@ -49,7 +50,7 @@ export class HomePopFilmComponent implements OnInit {
     });
   }
 
-  showSuspension(event, index) {
+  showSuspension(event, index, filmPoster) {
     let suspension = document.getElementsByClassName('suspension')[0];
     let curOffLeft = (event.path[9]['offsetWidth'] - event.path[4]['offsetWidth']) / 2;
     let curPosi = event['clientX'] - curOffLeft;
@@ -61,6 +62,7 @@ export class HomePopFilmComponent implements OnInit {
     setTimeout(() => {
       this.suspensionCtrl = true;
     }, 1000);
+    this.homeFilmPopData = filmPoster;
   }
 
   hideSuspension() {

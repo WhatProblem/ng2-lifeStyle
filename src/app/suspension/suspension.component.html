@@ -1,20 +1,31 @@
 <el-card class="box-card">
   <ng-template #header>
     <div class="clearfix">
-      <span style="line-height: 36px;">影片名称</span>
+      <span style="line-height: 36px;">{{detailData?.film_name}}</span>
     </div>
   </ng-template>
   <div class="text item">
-    <div><span>标签：</span><span>神话,爱情,玄幻</span></div>
+    <div>
+      <span>标签：</span>
+      <span *ngIf="detailData?.film_type === '0'">科幻</span>
+      <span *ngIf="detailData?.film_type === '1'">战争</span>
+      <span *ngIf="detailData?.film_type === '2'">爱情</span>
+      <span *ngIf="detailData?.film_type === '3'">古装</span>
+      <span *ngIf="detailData?.film_type === '4'">动作</span>
+      <span *ngIf="detailData?.film_type === '5'">动漫</span>
+      <span *ngIf="detailData?.film_type === '6'">玄幻</span>
+      <span *ngIf="detailData?.film_type === '7'">娱乐</span>
+      <span *ngIf="detailData?.film_type === '8'">喜剧</span>
+      </div>
   </div>
   <div class="text item">
-    <div><span>年代：</span><span>1993</span></div>
+    <div><span>年代：</span><span>{{detailData?.film_time}}</span></div>
   </div>
   <div class="text item">
-    <div><span>主演：</span><span>周星驰,朱茵,吴孟达,罗家英</span></div>
+    <div><span>主演：</span><span>{{detailData?.film_major}}</span></div>
   </div>
   <div class="text item introduce">
-    <div><span>简介：</span><span title="提示内容">《大话西游》是由周星驰彩星电影公司和西安电影制片厂联合摄制的爱情悲喜剧电影，由刘镇伟执导，周星驰、朱茵、吴孟达、莫文蔚等主演。</span></div>
+    <div><span>简介：</span><span title="提示内容">{{detailData?.film_desc}}</span></div>
   </div>
   <div class="text item">
     <div class="scoreOrFav">
@@ -22,14 +33,16 @@
         <span class="el-icon-star-on scores"></span><span class="el-icon-star-off scores"></span>
       </div>
       <div class="fav">
-        <span>未收藏<i class="myFont ng2-lifeStyle-shoucang1"></i></span>
+        <span *ngIf="detailData?.film_favorite === '1'">未收藏<i class="myFont ng2-lifeStyle-shoucang1"></i></span>
+        <span *ngIf="detailData?.film_favorite === '0'">收藏<i class="myFont ng2-lifeStyle-shoucang"></i></span>
       </div>
     </div>
   </div>
   <div class="text item">
     <div class="lockOrPlay">
       <div class="lock">
-        <span><i class="myFont ng2-lifeStyle-suo1"></i>加锁</span>
+        <span *ngIf="detailData?.film_lock === '0'"><i class="myFont ng2-lifeStyle-suo1"></i>未加锁</span>
+        <span *ngIf="detailData?.film_lock === '1'"><i class="myFont ng2-lifeStyle-suo"></i>加锁</span>
       </div>
       <div class="play">
         <el-button class="playBtn" [plain]="true" type="info" size="mini">播放<i class="myFont ng2-lifeStyle-bofang-shipin el-icon--right"></i></el-button>

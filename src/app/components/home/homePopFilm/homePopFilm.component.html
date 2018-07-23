@@ -4,7 +4,7 @@
     <div class="swiper-container" id="homePopFilm">
       <div class="swiper-wrapper">
         <div class="swiper-slide" *ngFor="let filmPoster of homePopPoster;let i=index">
-          <div class="homeFilmPoster" (mouseenter)="showSuspension($event, i)">
+          <div class="homeFilmPoster" (mouseenter)="showSuspension($event, i, filmPoster)">
             <img [src]="filmPoster.film_detail_poster" />
             <div class="filmName">{{filmPoster.film_name}}</div>
             <div class="filmScore">{{filmPoster.film_score}}</div>
@@ -14,6 +14,6 @@
       <div class="swiper-button-next" id="homeFilmNext"></div>
       <div class="swiper-button-prev" id="homeFilmPrev"></div>
     </div>
-    <app-suspension  (mouseleave)="hideSuspension()" class="suspension" [ngStyle]="{visibility: suspensionCtrl ? 'visible' : 'hidden'}"></app-suspension>
+    <app-suspension [suspension]="homeFilmPopData" (mouseleave)="hideSuspension()" class="suspension" [ngStyle]="{visibility: suspensionCtrl ? 'visible' : 'hidden'}"></app-suspension>
   </div>
 </div>
