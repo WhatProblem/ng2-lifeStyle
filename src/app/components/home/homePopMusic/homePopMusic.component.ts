@@ -11,24 +11,15 @@ export class HomePopMusicComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    this.initSwiper();
   }
 
   initSwiper() {
     Promise.resolve().then(() => {
       let swiper = new Swiper('#popMusicSwiper', {
-        slidesPerView: 3,
+        slidesPerView: 5,
         slidesPerColumn: 2,
         spaceBetween: 30,
-        // pagination: {
-        //   el: '.swiper-pagination',
-        //   clickable: true,
-        // },
-        // observer: true,
-        // observeParents: true,
-        // slidesPerGroup: 6,
-        // loop: false,
-        // loopFillGroupWithBlank: true,
       });
     });
   }
