@@ -8,5 +8,10 @@
     "wsUrl": "home/homePopFilm",
     "param": "film_score",
     "content": "homePopFilm部分数据 home部分"
+  },
+  "homePopMusic": {
+    "wsUrl": "home/homePopMusic",
+    "param": "music_score",
+    "content": "homePopMusic部分数据 home部分"
   }
 }

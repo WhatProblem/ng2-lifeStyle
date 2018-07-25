@@ -62,7 +62,11 @@
           width: 100%;
           display: flex;
           justify-content: space-around;
-          background: rgba(240, 240, 240, 0.5);
+          background: rgba(24, 24, 24, 0.75);
+          color: #ffd04b;
+          font-size: 16px;
+          height: 30px;
+          line-height: 30px;
         }
       }
 
@@ -72,6 +76,9 @@
         position: absolute;
         bottom: 0;
         left: 0;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: '微软雅黑';
       }
     }
   }

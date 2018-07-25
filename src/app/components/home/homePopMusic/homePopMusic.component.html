@@ -3,26 +3,24 @@
   <div class="popMusicList">
     <div class="swiper-container" id="popMusicSwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div class="swiper-slide" *ngFor="let musicData of homePopPoster;let i=index">
           <div class="popMusicPoster">
             <div class="topImg">
-              <img src="../../../../assets/img/homePopMusic/1.jpg" alt="">
+              <img [src]="musicData.music_detail_poster" alt="">
               <div class="scoreOrPlay">
-                <div class="score">9.6</div>
-                <div class="earphone">耳机图标</div>
+                <div class="score">
+                  <span class="myFont ng2-lifeStyle-erji"></span>
+                  <span>{{musicData.music_score}}</span>
+                  </div>
+                  <span class="myFont ng2-lifeStyle-bofang"></span>
               </div>
             </div>
-            <div class="bottomTitle">音乐名称</div>
+            <div class="bottomTitle">
+              <span class="myFont ng2-lifeStyle-yinle"></span>
+              <span>{{musicData.music_name}}</span>
+            </div>
           </div>
         </div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
       </div>
     </div>
   </div>

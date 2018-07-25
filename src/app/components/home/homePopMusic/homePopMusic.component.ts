@@ -8,10 +8,19 @@ import Swiper from 'swiper';
   encapsulation: ViewEncapsulation.None
 })
 export class HomePopMusicComponent implements OnInit {
+  private homePopPoster: object[] = [];
   constructor() { }
 
+  @Input() set popMusic(data) {
+    if (data.length) {
+      console.log(data);
+      this.homePopPoster = data;
+      this.initSwiper();
+    }
+  }
+
   ngOnInit() {
-    this.initSwiper();
+    
   }
 
   initSwiper() {
@@ -19,7 +28,7 @@ export class HomePopMusicComponent implements OnInit {
       let swiper = new Swiper('#popMusicSwiper', {
         slidesPerView: 5,
         slidesPerColumn: 2,
-        spaceBetween: 30,
+        spaceBetween: 40,
       });
     });
   }

@@ -29,4 +29,14 @@ export class HomeService {
       return res;
     });
   }
+
+  /**
+   * @description: 获取homePopFilm部分数据
+   * @param {music_score} 查询评分
+   */
+  getScoreMusics(methods: string, url: string, param?: any): Promise<any> {
+    return this.httpService.request(methods, url, param).then(res => {
+      return res;
+    });
+  }
 }
