@@ -9,6 +9,8 @@ import Swiper from 'swiper';
 })
 export class HomePopMusicComponent implements OnInit {
   private homePopPoster: object[] = [];
+  private curIndex: number;
+
   constructor() { }
 
   @Input() set popMusic(data) {
@@ -20,7 +22,7 @@ export class HomePopMusicComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
   }
 
   initSwiper() {
@@ -31,5 +33,13 @@ export class HomePopMusicComponent implements OnInit {
         spaceBetween: 40,
       });
     });
+  }
+
+  showPlayIcon(index) {
+    this.curIndex = index;
+  }
+
+  hidePlayIcon() {
+    this.curIndex = null;
   }
 }

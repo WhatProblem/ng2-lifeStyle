@@ -1,18 +1,20 @@
 <div class="homePopMusic">
-  <div class="popMusicTitle">热门推荐></div>
+  <div class="popMusicTitle"><span class="myFont ng2-lifeStyle-yinle musicTitle"></span> 热门推荐></div>
   <div class="popMusicList">
     <div class="swiper-container" id="popMusicSwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide" *ngFor="let musicData of homePopPoster;let i=index">
           <div class="popMusicPoster">
-            <div class="topImg">
+            <div class="topImg" (mouseenter)="showPlayIcon(i)" (mouseleave)="hidePlayIcon()">
               <img [src]="musicData.music_detail_poster" alt="">
+              <div class="myFont ng2-lifeStyle-bofang1 playIcon" [ngStyle]="{display: i === curIndex ? 'block' : 'none'}"></div>
               <div class="scoreOrPlay">
                 <div class="score">
                   <span class="myFont ng2-lifeStyle-erji"></span>
                   <span>{{musicData.music_score}}</span>
                   </div>
-                  <span class="myFont ng2-lifeStyle-bofang"></span>
+                  <span *ngIf="musicData.music_favorite == 0" class="myFont ng2-lifeStyle-shoucang1"></span>
+                  <span *ngIf="musicData.music_favorite != 0" class="myFont ng2-lifeStyle-shoucang"></span>
               </div>
             </div>
             <div class="bottomTitle">

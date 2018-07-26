@@ -15,6 +15,7 @@ import { HomeComponent } from './home.component';
 import { HomeBanComponent } from '../components/home/homeBanner/homeBan.component';
 import { HomePopFilmComponent } from '../components/home/homePopFilm/homePopFilm.component';
 import { HomePopMusicComponent } from '../components/home/homePopMusic/homePopMusic.component';
+import { HomePopGameComponent } from '../components/home/homePopGame/homePopGame.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { HomePopMusicComponent } from '../components/home/homePopMusic/homePopMu
     HomeComponent,
     HomeBanComponent,
     HomePopFilmComponent,
-    HomePopMusicComponent
+    HomePopMusicComponent,
+    HomePopGameComponent
   ],
   providers: [
     HomeService
