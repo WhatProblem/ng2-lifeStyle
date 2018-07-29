@@ -39,4 +39,14 @@ export class HomeService {
       return res;
     });
   }
+
+  /**
+   * @description: 获取homePopFilm部分数据
+   * @param {game_power} 查询评分
+   */
+  getPowerGames(methods: string, url: string, param?: any): Promise<any> {
+    return this.httpService.request(methods, url, param).then(res => {
+      return res;
+    });
+  }
 }

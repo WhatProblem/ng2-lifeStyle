@@ -1,24 +1,24 @@
 <div class="homePopGame">
-  <div class="homeFilmtitle"><span class="myFont ng2-lifeStyle-fenlei-yingxionglianmeng gameTitle"></span> 一代人的游戏></div>
+  <div class="homeFilmtitle"><span class="myFont ng2-lifeStyle-fenlei-yingxionglianmeng gameTitle"></span> 经典游戏></div>
   <div class="popGameList">
-    <div class="swiper-container">
+    <div class="swiper-container" id="gameContainer">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
-        <div class="swiper-slide">Slide 10</div>
+        <div class="swiper-slide" *ngFor="let item of popGamePoster;let i=index">
+          <div class="homeGamePoster">
+            <img [src]="item.game_detail_poster" alt="" (mousemove)="showIntroduce($event, i, item)" (mouseleave)="hideSuspension()">
+            <div class="favOrLock">
+              <div *ngIf="item.game_lock === 0" class="lockIcon"><span class="myFont ng2-lifeStyle-suo1"></span>未加锁</div>
+              <div *ngIf="item.game_lock === 1" class="lockIcon"><span class="myFont ng2-lifeStyle-suo"></span>加锁</div>
+              <div *ngIf="item.game_favorite === 0" class="favIcon"><span class="myFont ng2-lifeStyle-shoucang1"></span>未收藏</div>
+              <div *ngIf="item.game_favorite === 1" class="favIcon"><span class="myFont ng2-lifeStyle-shoucang"></span>已收藏</div>
+            </div>
+            <div class="heroName">{{item.game_role}}</div>
+          </div>
+        </div>
       </div>
-      <!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
-      <!-- Add Arrows -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next" id="gameNextBtn"></div>
+      <div class="swiper-button-prev" id="gamePrevBtn"></div>
     </div>
+    <app-gameSuspension [gameDetail]="gameDetail" class="gameSuspension" [ngStyle]="{display: ctrlShow? 'block' : 'none'}"></app-gameSuspension>
   </div>
 </div>

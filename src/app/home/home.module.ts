@@ -10,6 +10,7 @@ import { ElModule } from 'element-angular';
 import 'element-angular/theme/index.css';
 
 import { SuspensionModule } from '../suspension/suspension.module';
+import { GameSuspensionModule } from '../gameSuspension/gameSuspension.module';
 import { HomeService } from './home.service';
 import { HomeComponent } from './home.component';
 import { HomeBanComponent } from '../components/home/homeBanner/homeBan.component';
@@ -24,6 +25,7 @@ import { HomePopGameComponent } from '../components/home/homePopGame/homePopGame
     BrowserModule,
     BrowserAnimationsModule,
     SuspensionModule,
+    GameSuspensionModule,
     ElModule.forRoot(),
   ],
   declarations: [
@@ -31,7 +33,7 @@ import { HomePopGameComponent } from '../components/home/homePopGame/homePopGame
     HomeBanComponent,
     HomePopFilmComponent,
     HomePopMusicComponent,
-    HomePopGameComponent
+    HomePopGameComponent,
   ],
   providers: [
     HomeService

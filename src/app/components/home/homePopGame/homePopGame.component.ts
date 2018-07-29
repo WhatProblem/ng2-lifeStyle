@@ -8,7 +8,18 @@ import Swiper from 'swiper';
   encapsulation: ViewEncapsulation.None
 })
 export class HomePopGameComponent implements OnInit {
+  public gameDetail: object = null;
+  private popGamePoster: object[] = [];
+  private ctrlShow: boolean = false;
+
   constructor() { }
+
+  @Input() set popGame(data) {
+    if (data.length) {
+      this.popGamePoster = data;
+      this.initSwiper();
+    }
+  }
 
   ngOnInit() {
 
@@ -16,21 +27,41 @@ export class HomePopGameComponent implements OnInit {
 
   initSwiper() {
     Promise.resolve().then(() => {
-      let swiper = new Swiper('.swiper-container', {
-        slidesPerView: 3,
+      let swiper = new Swiper('#gameContainer', {
+        slidesPerView: 5,
         spaceBetween: 30,
-        slidesPerGroup: 3,
-        loop: true,
+        slidesPerGroup: 5,
         loopFillGroupWithBlank: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '#gameNextBtn',
+          prevEl: '#gamePrevBtn',
         },
       });
     });
+  }
+
+  showIntroduce(event, i, item) {
+    this.gameDetail = item;
+    this.ctrlShow = true;
+    let clientX = (event.path[10]['offsetWidth'] - event.path[4]['offsetWidth']) / 2;
+    let halfBodyWidth = event.path[10]['offsetWidth'] / 2;
+    let swiperWidth = event.path[4]['offsetWidth'];
+    let curX = event['clientX'];
+    let curOffLeft = curX - clientX;
+    let curOffTop = event['offsetY'] + 5;
+    let gameSuspension = document.getElementsByClassName('gameSuspension')[0];
+    if (curX < halfBodyWidth) {
+      gameSuspension['style'].cssText = '';
+      gameSuspension['style']['left'] = curOffLeft + 15 + 'px';
+      gameSuspension['style']['top'] = curOffTop + 15 + 'px';
+    } else {
+      gameSuspension['style'].cssText = '';
+      gameSuspension['style']['right'] = swiperWidth - curOffLeft + 5 + 'px';
+      gameSuspension['style']['top'] = curOffTop + 5 + 'px';
+    }
+  }
+
+  hideSuspension() {
+    this.ctrlShow = false;
   }
 }

@@ -12,6 +12,7 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit {
   public popFilm: object[] = [];
   public popMusic: object[] = [];
+  public popGame: object[] = [];
   private course: any;
 
   constructor(
@@ -35,6 +36,7 @@ export class HomeComponent implements OnInit {
 
     this.getHomePopFilm();
     this.getHomePopMusic();
+    this.getHomePopGame();
   }
 
   // homePopFilm数据获取
@@ -51,10 +53,21 @@ export class HomeComponent implements OnInit {
   // homePopMusic数据获取
   getHomePopMusic() {
     let self = this;
-    let param = { music_score: '9.5' };
+    let param = { music_score: '5.0' };
     this.homeService.getScoreMusics('get', 'homePopMusic', param).then(result => {
       if (result['code'] === 200) {
         self.popMusic = result['data']['data'];
+      }
+    });
+  }
+
+  // homePopGame数据获取
+  getHomePopGame() {
+    let self = this;
+    let param = { game_power: '12000' };
+    this.homeService.getPowerGames('get', 'homePopGame', param).then(result => {
+      if (result['code'] === 200) {
+        self.popGame = result['data']['data'];
       }
     });
   }

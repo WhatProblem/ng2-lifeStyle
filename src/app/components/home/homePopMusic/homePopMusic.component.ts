@@ -15,7 +15,6 @@ export class HomePopMusicComponent implements OnInit {
 
   @Input() set popMusic(data) {
     if (data.length) {
-      console.log(data);
       this.homePopPoster = data;
       this.initSwiper();
     }
@@ -31,6 +30,10 @@ export class HomePopMusicComponent implements OnInit {
         slidesPerView: 5,
         slidesPerColumn: 2,
         spaceBetween: 40,
+        navigation: {
+          nextEl: '#homeMusicNext',
+          prevEl: '#homeMusicPrev',
+        },
       });
     });
   }
