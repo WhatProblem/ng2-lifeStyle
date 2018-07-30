@@ -7,7 +7,7 @@
           <div class="popMusicPoster">
             <div class="topImg" (mouseenter)="showPlayIcon(i)" (mouseleave)="hidePlayIcon()">
               <img [src]="musicData.music_detail_poster" alt="">
-              <div class="myFont ng2-lifeStyle-bofang1 playIcon" [ngStyle]="{display: i === curIndex ? 'block' : 'none'}"></div>
+              <div routerLink="homeDetail" class="myFont ng2-lifeStyle-bofang1 playIcon" [ngStyle]="{display: i === curIndex ? 'block' : 'none'}"></div>
               <div class="scoreOrPlay">
                 <div class="score">
                   <span class="myFont ng2-lifeStyle-erji"></span>

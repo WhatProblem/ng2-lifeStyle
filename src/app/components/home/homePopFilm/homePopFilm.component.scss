@@ -3,7 +3,7 @@
   margin: auto;
 
   .homeFilmtitle {
-    margin-top: 15px;
+    margin-top: 50px;
     height: 32px;
     line-height: 32px;
     font-size: 16px;
@@ -51,6 +51,7 @@
       height: 10%;
       border: 2px solid #fff;
       position: relative;
+      cursor: pointer;
 
       .filmName {
         width: 100%;

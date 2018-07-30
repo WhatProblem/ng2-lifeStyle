@@ -11,8 +11,10 @@ import 'element-angular/theme/index.css';
 
 import { SuspensionModule } from '../suspension/suspension.module';
 import { GameSuspensionModule } from '../gameSuspension/gameSuspension.module';
+import { HomeRoutesModule } from './homeRoutes.module';
 import { HomeService } from './home.service';
 import { HomeComponent } from './home.component';
+import { HomeDetailComponent } from './homeDetail/homeDetail.component';
 import { HomeBanComponent } from '../components/home/homeBanner/homeBan.component';
 import { HomePopFilmComponent } from '../components/home/homePopFilm/homePopFilm.component';
 import { HomePopMusicComponent } from '../components/home/homePopMusic/homePopMusic.component';
@@ -24,12 +26,14 @@ import { HomePopGameComponent } from '../components/home/homePopGame/homePopGame
     FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
+    HomeRoutesModule,
     SuspensionModule,
     GameSuspensionModule,
     ElModule.forRoot(),
   ],
   declarations: [
     HomeComponent,
+    HomeDetailComponent,
     HomeBanComponent,
     HomePopFilmComponent,
     HomePopMusicComponent,
