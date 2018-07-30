@@ -4,14 +4,14 @@
       <img src="../../assets/img/avatar.jpg" alt="">
     </div>
     <div class="heroTitle">
-      <div class="titleName">{{heroInfo.game_role}}</div>
+      <div class="titleName">{{heroInfo?.game_role}}</div>
       <div class="alias">
-        <span *ngIf="heroInfo.game_fav == 0">熟练</span>
-        <span *ngIf="heroInfo.game_fav == 1">常用</span>
-        <span *ngIf="heroInfo.game_fav == 2">偶尔使用</span>
+        <span *ngIf="heroInfo?.game_fav == 0">熟练</span>
+        <span *ngIf="heroInfo?.game_fav == 1">常用</span>
+        <span *ngIf="heroInfo?.game_fav == 2">偶尔使用</span>
       </div>
     </div>
   </div>
-  <div class="heroIntroduce">{{heroInfo.game_desc}}</div>
+  <div class="heroIntroduce">{{heroInfo?.game_desc}}</div>
   <div class="heroTags"><span>Tags:</span>战士，刺客</div>
 </div>
