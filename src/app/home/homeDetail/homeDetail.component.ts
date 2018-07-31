@@ -8,15 +8,14 @@ import { ActivatedRoute } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class HomeDetailComponent implements OnInit {
+  public homeBread: object[] = [];
 
   constructor(
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    console.log(this.route);
+    let detailSortId = this.route.snapshot.paramMap.get('id');
     this.route.data.subscribe(data => {
       console.log(data);
     });

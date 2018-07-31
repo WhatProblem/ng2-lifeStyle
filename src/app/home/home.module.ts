@@ -9,6 +9,7 @@ import { ElModule } from 'element-angular';
 // if you use webpack, import style
 import 'element-angular/theme/index.css';
 
+import { BreadcrumbModule } from '../breadcrumb/breadcrumb.module';
 import { SuspensionModule } from '../suspension/suspension.module';
 import { GameSuspensionModule } from '../gameSuspension/gameSuspension.module';
 import { HomeRoutesModule } from './homeRoutes.module';
@@ -29,6 +30,7 @@ import { HomePopGameComponent } from '../components/home/homePopGame/homePopGame
     HomeRoutesModule,
     SuspensionModule,
     GameSuspensionModule,
+    BreadcrumbModule,
     ElModule.forRoot(),
   ],
   declarations: [

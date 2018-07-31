@@ -7,20 +7,24 @@ import { HomeDetailComponent } from './homeDetail/homeDetail.component';
 const homeRoutes = [
   {
     path: 'home',
-    // component: HomeComponent,
-    data: { title: 'home' },
+    component: HomeComponent,
+    data: { title: 'home', url: 'home' }
+  },
+  {
+    path: 'home/homeDetail',
+    // component: HomeDetailComponent,
+    data: { title: 'homeDetail', url: 'homeDetail' },
     children: [
       {
-        path: 'homeDetail',
-        component: HomeDetailComponent,
-        data: { title: 'homeDetail' }
+        path: '',
+        component: HomeDetailComponent
       },
       {
-        path: '',
-        component: HomeComponent,
+        path: ':id',
+        component: HomeDetailComponent
       }
     ]
-  },
+  }
 ];
 
 @NgModule({

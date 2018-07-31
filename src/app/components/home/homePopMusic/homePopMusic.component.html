@@ -1,5 +1,5 @@
 <div class="homePopMusic">
-  <div class="popMusicTitle"><span class="myFont ng2-lifeStyle-yinle musicTitle"></span> 热门推荐></div>
+  <div class="popMusicTitle" routerLink="homeDetail"><span class="myFont ng2-lifeStyle-yinle musicTitle"></span> 热门推荐></div>
   <div class="popMusicList">
     <div class="swiper-container" id="popMusicSwiper">
       <div class="swiper-wrapper">
@@ -7,7 +7,7 @@
           <div class="popMusicPoster">
             <div class="topImg" (mouseenter)="showPlayIcon(i)" (mouseleave)="hidePlayIcon()">
               <img [src]="musicData.music_detail_poster" alt="">
-              <div routerLink="homeDetail" class="myFont ng2-lifeStyle-bofang1 playIcon" [ngStyle]="{display: i === curIndex ? 'block' : 'none'}"></div>
+              <div [routerLink]="['homeDetail', i]" class="myFont ng2-lifeStyle-bofang1 playIcon" [ngStyle]="{display: i === curIndex ? 'block' : 'none'}"></div>
               <div class="scoreOrPlay">
                 <div class="score">
                   <span class="myFont ng2-lifeStyle-erji"></span>
