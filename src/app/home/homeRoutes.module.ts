@@ -8,12 +8,12 @@ const homeRoutes = [
   {
     path: 'home',
     component: HomeComponent,
-    data: { title: 'home', url: 'home' }
+    data: { title: 'home', url: 'home', name: '首页' }
   },
   {
     path: 'home/homeDetail',
     // component: HomeDetailComponent,
-    data: { title: 'homeDetail', url: 'homeDetail' },
+    data: { title: 'homeDetail', url: 'homeDetail', name: '详情' },
     children: [
       {
         path: '',

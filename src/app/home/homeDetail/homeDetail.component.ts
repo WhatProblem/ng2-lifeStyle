@@ -17,7 +17,15 @@ export class HomeDetailComponent implements OnInit {
   ngOnInit() {
     let detailSortId = this.route.snapshot.paramMap.get('id');
     this.route.data.subscribe(data => {
-      console.log(data);
+      let objFirst = { title: 'home', url: 'home', name: '首页' };
+      let objSecond = null;
+      data.curPage = 'CURPAGE';
+      if (detailSortId) {
+        objSecond = { title: detailSortId, url: '', name: detailSortId };
+        this.homeBread = [objFirst, data, objSecond];
+      } else {
+        this.homeBread = [objFirst, data];
+      }
     });
   }
 }

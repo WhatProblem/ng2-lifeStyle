@@ -15,11 +15,13 @@ import { GameSuspensionModule } from '../gameSuspension/gameSuspension.module';
 import { HomeRoutesModule } from './homeRoutes.module';
 import { HomeService } from './home.service';
 import { HomeComponent } from './home.component';
-import { HomeDetailComponent } from './homeDetail/homeDetail.component';
 import { HomeBanComponent } from '../components/home/homeBanner/homeBan.component';
 import { HomePopFilmComponent } from '../components/home/homePopFilm/homePopFilm.component';
 import { HomePopMusicComponent } from '../components/home/homePopMusic/homePopMusic.component';
 import { HomePopGameComponent } from '../components/home/homePopGame/homePopGame.component';
+
+import { HomeDetailComponent } from './homeDetail/homeDetail.component';
+import { FilmDetailTopModule } from '../components/filmDetailTop/filmDetailTop.module';
 
 @NgModule({
   imports: [
@@ -31,6 +33,7 @@ import { HomePopGameComponent } from '../components/home/homePopGame/homePopGame
     SuspensionModule,
     GameSuspensionModule,
     BreadcrumbModule,
+    FilmDetailTopModule,
     ElModule.forRoot(),
   ],
   declarations: [

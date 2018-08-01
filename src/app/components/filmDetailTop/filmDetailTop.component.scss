@@ -1,0 +1,18 @@
+.filmDetailTop {
+  width: 90%;
+  margin: auto;
+
+  .videoContainer {
+    width: 100%;
+
+    video {
+      width: 100%;
+      min-height: 450px;
+      background: #000;
+    }
+  }
+
+  .trailers {
+    margin-left: 15px;
+  }
+}
