@@ -4,15 +4,69 @@
 
   .videoContainer {
     width: 100%;
+    background: #000;
 
     video {
       width: 100%;
-      min-height: 450px;
+      height: 99%;
       background: #000;
     }
   }
 
-  .trailers {
+  .el-main {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0px;
+  }
+
+  .talkArea {
     margin-left: 15px;
+    background: #363636;
+    padding: 0 10px;
+    position: relative;
+
+    .talkTitle {
+      height: 24px;
+      line-height: 24px;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    .talkContent {
+      overflow: auto;
+      background: #363636;
+
+      .el-card {
+        border: none !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1439px) {
+    .talkArea {
+      height: 454px;
+    }
+
+    .talkContent {
+      height: 430px;
+    }
+
+    .videoContainer {
+      height: 454px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .talkArea {
+      height: 600px;
+    }
+
+    .talkContent {
+      height: 576px;
+    }
+
+    .videoContainer {
+      height: 600px;
+    }
   }
 }
