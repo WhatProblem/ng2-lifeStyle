@@ -14,9 +14,18 @@
         <div class="talkContent">
           <el-card class="box-card" body-style="background: #666; color: #ffd04b; border: none">
             <div *ngFor="let item of [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]" class="text item">
-              {{'列表内容 ' + item }}
+              <div class="discuss">
+                <i class="myFont ng2-lifeStyle-yonghu">:</i>
+                <span>{{'列表内容 ' + item }}</span>
+              </div>
             </div>
           </el-card>
+        </div>
+        <div class="talkSend">
+          <el-input placeholder="请输入发送内容..." [model]="input2">
+          </el-input>
+          <i class="myFont ng2-lifeStyle-jijianfasong sendBtn"></i>
+          <i class="myFont ng2-lifeStyle-shuohuaqipao speakFlag"></i>
         </div>
       </div>
     </div>

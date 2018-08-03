@@ -22,7 +22,6 @@
   .talkArea {
     margin-left: 15px;
     background: #363636;
-    padding: 0 10px;
     position: relative;
 
     .talkTitle {
@@ -30,14 +29,39 @@
       line-height: 24px;
       color: #ddd;
       font-size: 14px;
+      padding-left: 10px;
     }
 
     .talkContent {
       overflow: auto;
       background: #363636;
 
-      .el-card {
-        border: none !important;
+      .discuss {
+        border-bottom: 1px dotted #efb;
+
+        span {
+          color: #0b9;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .talkSend {
+      position: relative;
+
+      .sendBtn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 35px;
+        cursor: pointer;
+      }
+
+      .speakFlag {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        font-size: 18px;
       }
     }
   }
@@ -48,7 +72,7 @@
     }
 
     .talkContent {
-      height: 430px;
+      height: 390px;
     }
 
     .videoContainer {
@@ -62,7 +86,7 @@
     }
 
     .talkContent {
-      height: 576px;
+      height: 536px;
     }
 
     .videoContainer {
