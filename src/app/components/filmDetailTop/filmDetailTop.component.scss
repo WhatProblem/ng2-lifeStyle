@@ -2,95 +2,130 @@
   width: 90%;
   margin: auto;
 
-  .videoContainer {
-    width: 100%;
-    background: #000;
-
-    video {
+  .videoSection {
+    .videoContainer {
       width: 100%;
-      height: 99%;
       background: #000;
-    }
-  }
 
-  .el-main {
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-right: 0px;
-  }
-
-  .talkArea {
-    margin-left: 15px;
-    background: #363636;
-    position: relative;
-
-    .talkTitle {
-      height: 24px;
-      line-height: 24px;
-      color: #ddd;
-      font-size: 14px;
-      padding-left: 10px;
+      video {
+        width: 100%;
+        height: 99%;
+        background: #000;
+      }
     }
 
-    .talkContent {
-      overflow: auto;
+    .el-main {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-right: 0px;
+    }
+
+    .talkArea {
+      margin-left: 15px;
       background: #363636;
+      position: relative;
 
-      .discuss {
-        border-bottom: 1px dotted #efb;
+      .talkTitle {
+        height: 24px;
+        line-height: 24px;
+        color: #ddd;
+        font-size: 14px;
+        padding-left: 10px;
+      }
 
-        span {
-          color: #0b9;
-          font-size: 12px;
+      .talkContent {
+        overflow: auto;
+        background: #363636;
+
+        .discuss {
+          border-bottom: 1px dotted #efb;
+
+          span {
+            color: #0b9;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .talkSend {
+        position: relative;
+
+        .sendBtn {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 35px;
+          cursor: pointer;
+        }
+
+        .speakFlag {
+          position: absolute;
+          top: 10px;
+          left: 0;
+          font-size: 18px;
         }
       }
     }
 
-    .talkSend {
-      position: relative;
+    @media screen and (max-width: 1439px) {
+      .talkArea {
+        height: 454px;
+      }
 
-      .sendBtn {
+      .talkContent {
+        height: 390px;
+      }
+
+      .videoContainer {
+        height: 454px;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      .talkArea {
+        height: 600px;
+      }
+
+      .talkContent {
+        height: 536px;
+      }
+
+      .videoContainer {
+        height: 600px;
+      }
+    }
+  }
+
+  .introduce {
+    width: 100%;
+
+    h5 {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    .description {
+      position: relative;
+      width: 100%;
+
+      .desContentAll {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .desContent {
+        width: 100%;
+      }
+
+      .arrowUp {
+        font-size: 24px;
         position: absolute;
-        top: 0;
         right: 0;
-        font-size: 35px;
+        top: -20px;
         cursor: pointer;
       }
-
-      .speakFlag {
-        position: absolute;
-        top: 10px;
-        left: 0;
-        font-size: 18px;
-      }
-    }
-  }
-
-  @media screen and (max-width: 1439px) {
-    .talkArea {
-      height: 454px;
-    }
-
-    .talkContent {
-      height: 390px;
-    }
-
-    .videoContainer {
-      height: 454px;
-    }
-  }
-
-  @media screen and (min-width: 1440px) {
-    .talkArea {
-      height: 600px;
-    }
-
-    .talkContent {
-      height: 536px;
-    }
-
-    .videoContainer {
-      height: 600px;
     }
   }
 }

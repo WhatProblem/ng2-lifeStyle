@@ -1,31 +1,46 @@
 <div class="filmDetailTop">
-  <div el-container direction="horizontal">
-    <div el-aside width="65%">
-      <div class="videoContainer">
-        <video controls="controls">
-          <source src="movie.ogg" type="video/ogg">
-          <source src="movie.mp4" type="video/mp4"> Your browser does not support the video tag.
-        </video>
+  <div class="videoSection">
+    <div el-container direction="horizontal">
+      <div el-aside width="65%">
+        <div class="videoContainer">
+          <video controls="controls">
+            <source src="movie.ogg" type="video/ogg">
+            <source src="movie.mp4" type="video/mp4"> Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
-    </div>
-    <div el-main width="30%">
-      <div class="talkArea">
-        <div class="talkTitle el-icon-edit">讨论区</div>
-        <div class="talkContent">
-          <el-card class="box-card" body-style="background: #666; color: #ffd04b; border: none">
-            <div *ngFor="let item of [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]" class="text item">
-              <div class="discuss">
-                <i class="myFont ng2-lifeStyle-yonghu">:</i>
-                <span>{{'列表内容 ' + item }}</span>
+      <div el-main width="30%">
+        <div class="talkArea">
+          <div class="talkTitle el-icon-edit">讨论区</div>
+          <div class="talkContent">
+            <el-card class="box-card" body-style="background: #666; color: #ffd04b; border: none">
+              <div *ngFor="let item of [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]" class="text item">
+                <div class="discuss">
+                  <i class="myFont ng2-lifeStyle-yonghu">:</i>
+                  <span>{{'列表内容 ' + item }}</span>
+                </div>
               </div>
-            </div>
-          </el-card>
-        </div>
-        <div class="talkSend">
-          <el-input placeholder="请输入发送内容..." [model]="input2">
-          </el-input>
-          <i class="myFont ng2-lifeStyle-jijianfasong sendBtn"></i>
-          <i class="myFont ng2-lifeStyle-shuohuaqipao speakFlag"></i>
+            </el-card>
+          </div>
+          <div class="talkSend">
+            <el-input placeholder="请输入发送内容..." [model]="input2">
+            </el-input>
+            <i class="myFont ng2-lifeStyle-jijianfasong sendBtn"></i>
+            <i class="myFont ng2-lifeStyle-shuohuaqipao speakFlag"></i>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="introduce">
+    <h5>影片简介：</h5>
+    <div class="description">
+      <!--<div [ngClass]="{arrowIntroduce ? 'desContentAll' : 'desContent'}">
+        《大话西游》是由周星驰彩星电影公司和西安电影制片厂联合摄制的爱情悲喜剧电影， 由刘镇伟执导，周星驰、朱茵、吴孟达、莫文蔚等主演。《大话西游》由《月光宝盒》和《大圣娶亲》两部组成， 讲述了一个跨越时空的悲喜交加的爱情故事。影片于1995年在中国香港和内地上映，
+        直到1997年后才开始在内地各个高校和网络上流传并迅速走红。影片上映20年之际， 《大话西游》于2014年10月24日在内地重映。
+      </div>-->
+      <i *ngIf="arrowIntroduce" class="myFont ng2-lifeStyle-msnui-triangle-down arrowIcon"></i>
+      <i *ngIf="!arrowIntroduce" class="myFont ng2-lifeStyle-msnui-triangle-up arrowIcon"></i>
+    </div>
+  </div>
+</div>
