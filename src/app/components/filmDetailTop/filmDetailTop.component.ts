@@ -7,11 +7,15 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 })
 
 export class FilmDetailTopComponent implements OnInit {
-  private arrowIntroduce: boolean = true;
-  
+  private arrowIntroduce: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
 
+  }
+
+  showIntroduce() {
+    this.arrowIntroduce = !this.arrowIntroduce;
   }
 }

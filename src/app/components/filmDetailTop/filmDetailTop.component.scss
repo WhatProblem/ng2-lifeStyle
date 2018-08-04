@@ -96,34 +96,60 @@
     }
   }
 
+  .doScore {
+    margin-top: 25px;
+
+    .videoTitle {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ccc;
+      margin-right: 10px;
+    }
+
+    .videoScore {
+      color: #ffd04b;
+      margin-left: 15px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .scores {
+      display: inline-block;
+      margin-left: 25px;
+    }
+  }
+
   .introduce {
     width: 100%;
 
     h5 {
       margin-bottom: 10px;
       width: 100%;
+      color: #ffd04b;
     }
 
     .description {
       position: relative;
       width: 100%;
+      font-size: 14px;
+      color: #fff;
 
-      .desContentAll {
+      .desContent {
         width: 100%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
       }
 
-      .desContent {
+      .desContentAll {
         width: 100%;
       }
 
-      .arrowUp {
-        font-size: 24px;
+      .arrowIcon {
         position: absolute;
-        right: 0;
         top: -20px;
+        right: 0;
+        font-size: 20px;
         cursor: pointer;
       }
     }
