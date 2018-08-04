@@ -1,6 +1,6 @@
 <div class="homePopMusic">
   <div class="popMusicTitle">
-    <a routerLink="homeDetail">
+    <a routerLink="homeDetail" [queryParams]="{homeId: 'homeMusicDetail'}">
       <span class="myFont ng2-lifeStyle-yinle musicTitle"></span> 热门推荐>
     </a>
   </div>
@@ -11,7 +11,7 @@
           <div class="popMusicPoster">
             <div class="topImg" (mouseenter)="showPlayIcon(i)" (mouseleave)="hidePlayIcon()">
               <img [src]="musicData.music_detail_poster" alt="">
-              <div [routerLink]="['homeDetail', musicData.music_name]" class="myFont ng2-lifeStyle-bofang1 playIcon" [ngStyle]="{display: i === curIndex ? 'block' : 'none'}"></div>
+              <div [routerLink]="['homeDetail', musicData.music_name]" [queryParams]="{homeId: 'homeMusicDetail'}" class="myFont ng2-lifeStyle-bofang1 playIcon" [ngStyle]="{display: i === curIndex ? 'block' : 'none'}"></div>
               <div class="scoreOrPlay">
                 <div class="score">
                   <span class="myFont ng2-lifeStyle-erji"></span>

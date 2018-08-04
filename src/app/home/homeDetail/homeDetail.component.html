@@ -1,6 +1,7 @@
 <div class="homeDetail">
   <app-breadcrumb [homeBread]="homeBread"></app-breadcrumb>
-  <film-filmDetailTop></film-filmDetailTop>
+  <film-filmDetailTop *ngIf="showComponent === 'homeFilmDetail'"></film-filmDetailTop>
+  <music-musicDetailTop *ngIf="showComponent === 'homeMusicDetail'"></music-musicDetailTop>
   <h1>homeDetail</h1>
   <button routerLink="/home">返回主页</button>
 </div>

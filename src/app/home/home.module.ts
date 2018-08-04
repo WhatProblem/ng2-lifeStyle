@@ -22,6 +22,7 @@ import { HomePopGameComponent } from '../components/home/homePopGame/homePopGame
 
 import { HomeDetailComponent } from './homeDetail/homeDetail.component';
 import { FilmDetailTopModule } from '../components/filmDetailTop/filmDetailTop.module';
+import { MusicDetailTopModule } from '../components/musicDetailTop/musicDetailTop.module';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { FilmDetailTopModule } from '../components/filmDetailTop/filmDetailTop.m
     GameSuspensionModule,
     BreadcrumbModule,
     FilmDetailTopModule,
+    MusicDetailTopModule,
     ElModule.forRoot(),
   ],
   declarations: [
