@@ -37,6 +37,23 @@
         overflow: auto;
         background: #363636;
 
+        &::-webkit-scrollbar {
+          width: 10px;
+          height: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+          background: rgba(100, 160, 70, 0.9);
+        }
+
+        &::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+          border-radius: 10px;
+          background: rgba(240, 240, 240, 0.9);
+        }
+
         .discuss {
           border-bottom: 1px dotted #efb;
 
