@@ -1,0 +1,95 @@
+.gameDetailTop {
+  width: 90%;
+  margin: auto;
+  background: rgba(120, 120, 120, 0.25);
+  box-shadow: 0px 10px 20px #fff;
+
+  .gameContent {
+    width: 1096px;
+    height: 560px;
+    margin: auto;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .leftIntro {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 370px;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+
+      .detailIntro {
+        width: 320px;
+        margin: auto;
+        margin-top: 15px;
+
+        .btnLine {
+          color: #fff;
+          font-size: 14px;
+          display: table;
+          content: "";
+          clear: both;
+
+          .btnBlock {
+            float: left;
+            margin-top: 15px;
+            margin-left: 17px;
+
+            a {
+              width: 138px;
+              height: 30px;
+              border: 1px solid #fff;
+              line-height: 30px;
+              text-align: center;
+              font-size: 14px;
+              color: #fff;
+              display: block;
+
+              &:hover {
+                background: #ffd04b;
+                cursor: pointer;
+                color: #333;
+              }
+            }
+          }
+        }
+
+        .heroInfo {
+          margin-left: 17px;
+
+          h2 {
+            font-size: 24px;
+            line-height: 30px;
+            color: #fff;
+            margin-top: 37px;
+            margin-bottom: 0;
+          }
+
+          h1 {
+            font-size: 48px;
+            line-height: 60px;
+            color: #fff;
+            font-weight: 700;
+            text-align: left;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 10px;
+          }
+
+          .heroProgress {
+            color: #fff;
+            font-size: 14px;
+            margin-top: 18px;
+            height: 88px;
+            position: relative;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}

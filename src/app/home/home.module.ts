@@ -23,6 +23,7 @@ import { HomePopGameComponent } from '../components/home/homePopGame/homePopGame
 import { HomeDetailComponent } from './homeDetail/homeDetail.component';
 import { FilmDetailTopModule } from '../components/filmDetailTop/filmDetailTop.module';
 import { MusicDetailTopModule } from '../components/musicDetailTop/musicDetailTop.module';
+import { GameDetailTopModule } from '../components/gameDetailTop/gameDetailTop.module';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { MusicDetailTopModule } from '../components/musicDetailTop/musicDetailTo
     BreadcrumbModule,
     FilmDetailTopModule,
     MusicDetailTopModule,
+    GameDetailTopModule,
     ElModule.forRoot(),
   ],
   declarations: [

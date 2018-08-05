@@ -1,0 +1,76 @@
+<div class="gameDetailTop">
+  <div class="gameContent">
+    <img src="../../../assets/img/homePopGame/ai_ke.jpg" alt="">
+    <div class="leftIntro">
+      <div class="detailIntro">
+        <div class="btnLine">
+          <div class="btnBlock"><a>英雄攻略</a></div>
+          <div class="btnBlock"><a>英雄视频</a></div>
+          <div class="btnBlock"><a>英雄出装</a></div>
+          <div class="btnBlock"><a>天赋加点</a></div>
+        </div>
+        <div class="heroInfo">
+          <h2>时间刺客</h2>
+          <h1>艾克</h1>
+          <div class="heroTags">
+            <el-tag type="warning" size="mini" class="myTags">法术</el-tag>
+            <el-tag type="warning" size="mini" class="myTags">突进</el-tag>
+          </div>
+          <div class="heroProgress">
+            <div el-row>
+              <div el-col span="6">
+                <div class="grid-content bg-purple">生存能力</div>
+              </div>
+              <div el-col span="18">
+                <div class="grid-content bg-purple-light">
+                  <el-progress [percentage]="70" status="exception"></el-progress>
+                </div>
+              </div>
+            </div>
+            <div el-row>
+              <div el-col span="6">
+                <div class="grid-content bg-purple">物理攻击</div>
+              </div>
+              <div el-col span="18">
+                <div class="grid-content bg-purple-light">
+                  <el-progress [percentage]="60" status="exception"></el-progress>
+                </div>
+              </div>
+            </div>
+            <div el-row>
+              <div el-col span="6">
+                <div class="grid-content bg-purple">魔法攻击</div>
+              </div>
+              <div el-col span="18">
+                <div class="grid-content bg-purple-light">
+                  <el-progress [percentage]="80" status="exception"></el-progress>
+                </div>
+              </div>
+            </div>
+            <div el-row>
+              <div el-col span="6">
+                <div class="grid-content bg-purple">操作难度</div>
+              </div>
+              <div el-col span="18">
+                <div class="grid-content bg-purple-light">
+                  <el-progress [percentage]="60" status="exception"></el-progress>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="heroStory">
+            <el-button type="warning" (click)="showHeroStory()">背景故事</el-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <el-dialog [title]="'艾克'" [(visible)]="heroStory">
+    <span>时间刺客·艾克是网游《英雄联盟》第125位英雄。
+艾克是一个叛逆而又聪明的坏小子，同时也是一个天不怕地不怕的小神童，靠着自己的发明创造混迹于祖安的黑暗街道。
+在游戏中艾克是一个擅于长期作战的强力游击型刺客，可以凭借自己的高机动性以及减速和击晕等控制技能将敌人撕成碎片。
+如果他在战斗当中处于劣势，那么这位来自于祖安的天才少年可以让时间倒退几秒，再试身手。 [1]  艾克适合走单人路，扮演小型团战中的刺客角色，
+在智商上和策略上碾压敌人，最后用闪烁突进，简单粗暴地痛扁对手。
+</span>
+  </el-dialog>
+</div>

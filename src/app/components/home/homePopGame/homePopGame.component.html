@@ -1,5 +1,9 @@
 <div class="homePopGame">
-  <div class="homeFilmtitle"><span class="myFont ng2-lifeStyle-fenlei-yingxionglianmeng gameTitle"></span> 经典游戏></div>
+  <div class="homeFilmtitle">
+    <a routerLink="homeDetail" [queryParams]="{homeId: 'homeGameDetail'}">
+      <span class="myFont ng2-lifeStyle-fenlei-yingxionglianmeng gameTitle"></span> 经典游戏>
+    </a>
+  </div>
   <div class="popGameList">
     <div class="swiper-container" id="gameContainer">
       <div class="swiper-wrapper">
