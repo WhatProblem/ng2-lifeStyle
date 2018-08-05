@@ -2,5 +2,51 @@
   width: 90%;
   margin: auto;
   background: #a3a3a3;
-  
+  color: #fff;
+  font-size: 14px;
+
+  .musicTopSection {
+    width: 100%;
+    height: 100%;
+
+    .musicContent {
+      width: 100%;
+      height: 100%;
+
+      .imgSection {
+        width: 30%;
+        padding: 15px;
+        height: 280px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      h1 {
+        font-weight: normal;
+        color: #333;
+      }
+
+      .rowLine {
+        margin: 10px 0;
+      }
+
+      .myTags {
+        .el-tag--mini {
+          color: #333;
+          background: #ffd04b;
+        }
+      }
+
+      .musicTitle {
+        color: #333;
+      }
+
+      .musicDesc {
+        color: #333;
+      }
+    }
+  }
 }

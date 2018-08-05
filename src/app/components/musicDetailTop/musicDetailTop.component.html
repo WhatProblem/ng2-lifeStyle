@@ -1,33 +1,33 @@
 <div class="musicDetailTop">
   <div el-row>
-    <div el-col span="20" offset=2>
-      <div class="">
-        <div el-container class="" direction="horizontal">
-          <div el-aside width="30%">
+    <div el-col span="20">
+      <div class="musicTopSection">
+        <div el-container class="musicContent" direction="horizontal">
+          <div el-aside width="30%" class="imgSection">
             <img src="../../../assets/img/homePopMusic/1.jpg" alt="">
           </div>
-          <div el-main width="65">
+          <div el-main width="65%">
             <h1>音乐名称部分</h1>
-            <div>
+            <div class="rowLine">
               <i class="myFont ng2-lifeStyle-yonghu">:</i>
-              <span>WS练习使用</span>
+              <span class="musicDesc">WS练习使用</span>
+            </div>
+            <div class="rowLine">
+              <span class="musicTitle">标签:</span>
+              <el-tag type="warning" size="mini" class="myTags">安静</el-tag>
+              <el-tag type="warning" size="mini" class="myTags">流行</el-tag>
+            </div>
+            <div class="rowLine">
+              <span class="musicTitle">播放量：</span><span class="musicDesc">1.7万</span>
+            </div>
+            <div class="rowLine">
+              <span class="musicTitle">收藏量：</span><span class="musicDesc">456</span>
             </div>
             <div>
-              <span>标签:</span>
-              <el-tag class="myFont">安静</el-tag>
-              <el-tag class="myFont">流行</el-tag>
-            </div>
-            <div>
-              <span>播放量：</span><span>1.7万</span>
-            </div>
-            <div>
-              <span>收藏量：</span><span>456</span>
-            </div>
-            <div>
-              <el-button type="primary" icon="edit">播放</el-button>
-              <el-button type="primary" icon="share">收藏</el-button>
-              <el-button type="primary" icon="delete">评论</el-button>
-              <el-button type="primary">下载<i class="el-icon-upload el-icon--right"></i></el-button>
+              <el-button type="warning"><i class="myFont ng2-lifeStyle-bofang"></i> 播放</el-button>
+              <el-button><i class="myFont ng2-lifeStyle-shoucang1"></i> 收藏</el-button>
+              <el-button><i class="myFont ng2-lifeStyle-shuohuaqipao"></i> 评论</el-button>
+              <el-button><i class="myFont ng2-lifeStyle-xiazai"></i>下载</el-button>
             </div>
           </div>
         </div>
