@@ -40,7 +40,8 @@ export class LoginedComponent implements OnInit {
   }
 
   login() {
-    this.authService.redirectUrl = '/profile';
+    let self = this;
+    // this.authService.redirectUrl = '/profile';
     this.ctrlModal = false;
     // this.authService.login().subscribe(() => {
     //   if (this.authService.isLoggedIn) {
@@ -49,15 +50,22 @@ export class LoginedComponent implements OnInit {
     //   }
     // });
 
-    let self = this;
+    // let self = this;
+    // new Promise((resolve, reject) => {
+    //   self.authService.login();
+    //   resolve();
+    // }).then(() => {
+    //   if (this.authService.isLoggedIn) {
+    //     let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/profile';
+    //     this.router.navigate([redirect]);
+    //   }
+    // });
     new Promise((resolve, reject) => {
       self.authService.login();
       resolve();
     }).then(() => {
-      if (this.authService.isLoggedIn) {
-        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/profile';
-        this.router.navigate([redirect]);
-      }
+      let obj = { logined: 'LOGIN_SUCCESS' };
+      self.ngEventService.eventEmit.emit(obj);
     });
   }
 }

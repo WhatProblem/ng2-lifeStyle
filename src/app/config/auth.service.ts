@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
+import { session } from '../utils/session/session';
 
 
 @Injectable()
@@ -15,7 +16,9 @@ export class AuthService {
   //   return Observable.of(true).delay(1000).do(() => this.isLoggedIn = true);
   // }
   login() {
-    this.isLoggedIn = true;
+    console.log(456);
+    // this.isLoggedIn = true;
+    session.put('testLogin', 'abc123456789abc', true);
   }
 
   // logout(): void {
@@ -23,6 +26,7 @@ export class AuthService {
   // }
 
   logOut() {
-    this.isLoggedIn = false;
+    // this.isLoggedIn = false;
+    session.clear(true);
   }
 }

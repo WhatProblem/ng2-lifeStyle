@@ -11,6 +11,7 @@ import {
 } from '@angular/router';
 import { AuthService } from './auth.service';
 import { NgEventService } from '../utils/eventService/ngEvent.service';
+import { session } from '../utils/session/session';
 
 @Injectable()
 export class AuthenticateService implements CanActivate, CanActivateChild, CanLoad {
@@ -40,9 +41,13 @@ export class AuthenticateService implements CanActivate, CanActivateChild, CanLo
   }
 
   checkLogin(url: string): boolean {
-    if (this.authService.isLoggedIn) {
+    // if (this.authService.isLoggedIn) {
+    //   return true;
+    // }
+    if (session.get('testLogin')) {
       return true;
     }
+
 
     // this.authService.redirectUrl = url;
     // let sessionId = '123456789';

@@ -43,7 +43,8 @@
     </div>
     <div el-col [span]="2" offset=1>
       <div class="grid-content bg-purple" class="secHeader">
-        <el-dropdown [model]="data" (selected)="handle($event)">
+        <div *ngIf="!ctrlLogin" class="loginBtn" (click)="logIn()">登录</div>
+        <el-dropdown *ngIf="ctrlLogin" [model]="data" (selected)="handle($event)">
           个人信息
         </el-dropdown>
       </div>
