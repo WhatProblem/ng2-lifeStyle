@@ -1,4 +1,9 @@
 {
+  "userLogin": {
+    "wsUrl": "ng2LifeStyle/login",
+    "params": "username, password",
+    "content": "用户登录"
+  },
   "getTestData": {
     "wsUrl": "game/allGameRoleList",
     "params": "pages_index, pages_total, user_id",

@@ -37,7 +37,7 @@ export class HttpService {
         });
       } else if (method === 'post' || method === 'POST') {
         httpUrl = baseUrl + apiUrl;
-        return self.http.post(baseUrl, params).toPromise().then(result => {
+        return self.http.post(httpUrl, params).toPromise().then(result => {
           resp = result;
           return resp;
         });

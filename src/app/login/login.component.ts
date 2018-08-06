@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { EventService } from '../utils/eventService/event.service';
 import { NgEventService } from '../utils/eventService/ngEvent.service';
 import { AuthService } from '../config/auth.service';
 import { AuthenticateService } from '../config/authenticate.service';
+import { HttpService } from '../sdk/http/http.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,9 @@ export class LoginedComponent implements OnInit {
   constructor(
     public ngEventService: NgEventService,
     public authService: AuthService,
-    public router: Router
+    public router: Router,
+    public httpService: HttpService,
+    public http: HttpClient
   ) { }
 
   ngOnInit() {
@@ -41,31 +45,42 @@ export class LoginedComponent implements OnInit {
 
   login() {
     let self = this;
-    // this.authService.redirectUrl = '/profile';
     this.ctrlModal = false;
-    // this.authService.login().subscribe(() => {
-    //   if (this.authService.isLoggedIn) {
-    //     let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/profile';
-    //     this.router.navigate([redirect]);
-    //   }
+
+    let param = {
+      username: this.username,
+      password: this.password
+    };
+
+    // this.http.post('http://localhost:9000/ng2LifeStyle/login', param).subscribe(
+    //   res => {
+    //     console.log(res);
+    //   },
+    //   err => {
+    //     console.log(err);
+    //   });
+
+    // this.httpService.request('post', 'userLogin', param).then(res => {
+    //   console.log(res);
     // });
 
-    // let self = this;
-    // new Promise((resolve, reject) => {
-    //   self.authService.login();
-    //   resolve();
-    // }).then(() => {
-    //   if (this.authService.isLoggedIn) {
-    //     let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/profile';
-    //     this.router.navigate([redirect]);
-    //   }
-    // });
+    this.userLogin('post', 'userLogin', param).then(res => {
+      console.log(123);
+      console.log(res);
+    });
+
     new Promise((resolve, reject) => {
       self.authService.login();
       resolve();
     }).then(() => {
       let obj = { logined: 'LOGIN_SUCCESS' };
       self.ngEventService.eventEmit.emit(obj);
+    });
+  }
+
+  userLogin(methods: string, url: string, param?: any): Promise<any> {
+    return this.httpService.request(methods, url, param).then(res => {
+      return res;
     });
   }
 }

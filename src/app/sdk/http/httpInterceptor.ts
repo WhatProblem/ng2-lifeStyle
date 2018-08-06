@@ -4,7 +4,8 @@ import {
   HttpInterceptor,
   HttpHandler,
   HttpRequest,
-  HttpResponse
+  HttpResponse,
+  HttpErrorResponse
 } from '@angular/common/http';
 import { Observable } from 'rxjs/observable';
 
@@ -12,12 +13,20 @@ import { Observable } from 'rxjs/observable';
 @Injectable()
 export class WsHttpInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const authReq = req.clone({
-      headers: req.headers.set('Authorization', 'token <your GitHub token>')
+    const reqs = req.clone({
+      setHeaders: {
+        Authorization: 'JWT'
+      }
     });
+    // return next.handle(reqs);
+
+
+    // const authReq = req.clone({
+    //   headers: req.headers.set('Authorization', 'token <your GitHub token>')
+    // });
     // console.log(authReq);
     // return next.handle(req);
-    return next.handle(req).map(event => {
+    return next.handle(reqs).map(event => {
       if (event instanceof HttpResponse) {
         if (event.status === 401) {
           // JWT expired, go to login
