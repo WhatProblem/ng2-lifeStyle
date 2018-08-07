@@ -50,19 +50,19 @@ export class HomePopFilmComponent implements OnInit {
     });
   }
 
-  showSuspension(event, index, filmPoster) {
-    let suspension = document.getElementsByClassName('suspension')[0];
-    let curOffLeft = (event.path[9]['offsetWidth'] - event.path[4]['offsetWidth']) / 2;
-    let curPosi = event['clientX'] - curOffLeft;
-    let curWidth = event.target.offsetWidth;
-    let curHeight = event.target.offsetHeight;
-    suspension['style']['width'] = curWidth + 15 + 'px';
-    suspension['style']['height'] = curHeight + 30 + 'px';
-    suspension['style']['left'] = Math.floor(curPosi / (curWidth + 30)) * (curWidth + 30) + 'px';
-    setTimeout(() => {
+  showSuspension(event?: any, index?: any, filmPoster?: any) {
+    if (event) {
+      let suspension = document.getElementsByClassName('suspension')[0];
+      let curOffLeft = (event.path[9]['offsetWidth'] - event.path[4]['offsetWidth']) / 2;
+      let curPosi = event['clientX'] - curOffLeft;
+      let curWidth = event.target.offsetWidth;
+      let curHeight = event.target.offsetHeight;
+      suspension['style']['width'] = curWidth + 15 + 'px';
+      suspension['style']['height'] = curHeight + 30 + 'px';
+      suspension['style']['left'] = Math.floor(curPosi / (curWidth + 30)) * (curWidth + 30) + 'px';
       this.suspensionCtrl = true;
-    }, 1000);
-    this.homeFilmPopData = filmPoster;
+      this.homeFilmPopData = filmPoster;
+    }
   }
 
   hideSuspension() {

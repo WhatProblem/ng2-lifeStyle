@@ -29,8 +29,9 @@
   </div>
   <div class="text item">
     <div class="scoreOrFav">
-      <div>
-        <span class="el-icon-star-on scores"></span><span class="el-icon-star-off scores"></span>
+      <div class="lock">
+        <span *ngIf="detailData?.film_lock === '0'"><i class="myFont ng2-lifeStyle-suo1"></i>未加锁</span>
+        <span *ngIf="detailData?.film_lock === '1'"><i class="myFont ng2-lifeStyle-suo"></i>加锁</span>
       </div>
       <div class="fav">
         <span *ngIf="detailData?.film_favorite === '1'">未收藏<i class="myFont ng2-lifeStyle-shoucang1"></i></span>
@@ -40,10 +41,6 @@
   </div>
   <div class="text item">
     <div class="lockOrPlay">
-      <div class="lock">
-        <span *ngIf="detailData?.film_lock === '0'"><i class="myFont ng2-lifeStyle-suo1"></i>未加锁</span>
-        <span *ngIf="detailData?.film_lock === '1'"><i class="myFont ng2-lifeStyle-suo"></i>加锁</span>
-      </div>
       <div class="play">
         <el-button class="playBtn" [plain]="true" type="info" size="mini">播放<i class="myFont ng2-lifeStyle-bofang-shipin el-icon--right"></i></el-button>
       </div>
