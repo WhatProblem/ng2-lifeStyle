@@ -5,7 +5,6 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 import { session } from '../utils/session/session';
 
-
 @Injectable()
 export class AuthService {
   isLoggedIn = false;
@@ -13,20 +12,18 @@ export class AuthService {
   redirectUrl: string;
 
   // login(): Observable<boolean> {
-  //   return Observable.of(true).delay(1000).do(() => this.isLoggedIn = true);
+  // return Observable.of(true).delay(1000).do(() => this.isLoggedIn = true);
   // }
-  login() {
-    console.log(456);
-    // this.isLoggedIn = true;
-    session.put('testLogin', 'abc123456789abc', true);
+  login(token) {
+    session.put('AUTHENTICATE_LOGIN', token, true);
   }
 
   // logout(): void {
-  //   this.isLoggedIn = false;
+  // this.isLoggedIn = false;
   // }
 
   logOut() {
     // this.isLoggedIn = false;
-    session.clear(true);
+    session.remove('AUTHENTICATE_LOGIN');
   }
 }

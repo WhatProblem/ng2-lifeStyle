@@ -46,41 +46,22 @@ export class LoginedComponent implements OnInit {
   login() {
     let self = this;
     this.ctrlModal = false;
-
     let param = {
       username: this.username,
       password: this.password
     };
-
-    // this.http.post('http://localhost:9000/ng2LifeStyle/login', param).subscribe(
-    //   res => {
-    //     console.log(res);
-    //   },
-    //   err => {
-    //     console.log(err);
-    //   });
-
-    // this.httpService.request('post', 'userLogin', param).then(res => {
-    //   console.log(res);
-    // });
-
-    this.userLogin('post', 'userLogin', param).then(res => {
-      console.log(123);
-      console.log(res);
-    });
-
-    new Promise((resolve, reject) => {
-      self.authService.login();
-      resolve();
-    }).then(() => {
-      let obj = { logined: 'LOGIN_SUCCESS' };
-      self.ngEventService.eventEmit.emit(obj);
+    this.httpService.request('post', 'userLogin', param).then(res => {
+      if (res['token']) {
+        self.authService.login(res['token']);
+        let obj = { logined: 'LOGIN_SUCCESS' };
+        self.ngEventService.eventEmit.emit(obj);
+      }
     });
   }
 
-  userLogin(methods: string, url: string, param?: any): Promise<any> {
-    return this.httpService.request(methods, url, param).then(res => {
-      return res;
-    });
-  }
+  // userLogin(methods: string, url: string, param?: any): Promise<any> {
+  //   return this.httpService.request(methods, url, param).then(res => {
+  //     return res;
+  //   });
+  // }
 }

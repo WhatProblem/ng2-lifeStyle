@@ -8,24 +8,24 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { Observable } from 'rxjs/observable';
-
+import { session } from '../../utils/session/session';
 
 @Injectable()
 export class WsHttpInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    let myJWT = session.get('AUTHENTICATE_LOGIN');
     const reqs = req.clone({
       setHeaders: {
-        Authorization: 'JWT'
+        Authorization: myJWT || ''
       }
     });
     // return next.handle(reqs);
-
 
     // const authReq = req.clone({
     //   headers: req.headers.set('Authorization', 'token <your GitHub token>')
     // });
     // console.log(authReq);
-    // return next.handle(req);
+    // return next.handle(reqs);
     return next.handle(reqs).map(event => {
       if (event instanceof HttpResponse) {
         if (event.status === 401) {
@@ -36,4 +36,3 @@ export class WsHttpInterceptor implements HttpInterceptor {
     });
   }
 }
-

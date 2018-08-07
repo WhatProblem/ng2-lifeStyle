@@ -42,12 +42,11 @@ export class AuthenticateService implements CanActivate, CanActivateChild, CanLo
 
   checkLogin(url: string): boolean {
     // if (this.authService.isLoggedIn) {
-    //   return true;
+    // return true;
     // }
-    if (session.get('testLogin')) {
+    if (session.get('AUTHENTICATE_LOGIN')) {
       return true;
     }
-
 
     // this.authService.redirectUrl = url;
     // let sessionId = '123456789';
@@ -59,7 +58,7 @@ export class AuthenticateService implements CanActivate, CanActivateChild, CanLo
 
     // this.router.navigate(['/login'], navigationExtras);
     // this.router.navigate(['./login']);
-    
+
     // 弹出登录框
     let obj = {
       id: 1,

@@ -5,6 +5,7 @@ import { EventService } from '../utils/eventService/event.service';
 import { NgEventService } from '../utils/eventService/ngEvent.service';
 import { AuthService } from '../config/auth.service';
 import { session } from '../utils/session/session';
+import { HttpService } from '../sdk/http/http.service';
 
 @Component({
   selector: 'app-headerBar',
@@ -31,12 +32,13 @@ export class HeaderBarComponent implements OnInit {
     public ngEventService: NgEventService,
     public authService: AuthService,
     public router: Router,
-    public location: Location
+    public location: Location,
+    public httpService: HttpService
   ) { }
 
   ngOnInit() {
     let self = this;
-    let testStorage = session.get('testLogin');
+    let testStorage = session.get('AUTHENTICATE_LOGIN');
     if (testStorage) {
       this.ctrlLogin = true;
     } else {
@@ -60,7 +62,7 @@ export class HeaderBarComponent implements OnInit {
 
   // 登录
   userInfo() {
-    if (session.get('testLogin')) {
+    if (session.get('AUTHENTICATE_LOGIN')) {
       this.router.navigate(['./profile']);
       // this.ctrlLogin = false;
     } else {
@@ -82,17 +84,21 @@ export class HeaderBarComponent implements OnInit {
   logOut() {
     let self = this;
     let curUrl = this.location.path();
-    if (curUrl.indexOf('profile') !== -1) {
-      new Promise((resolve, reject) => {
-        self.authService.logOut();
-        resolve();
-      }).then(() => {
-        this.router.navigate(['/home']);
-      });
-    } else {
-      this.authService.logOut();
-    }
     this.ctrlLogin = false;
+    this.httpService.request('post', 'userLogOut').then(res => {
+      if (res) {
+        if (curUrl.indexOf('profile') !== -1) {
+          new Promise((resolve, reject) => {
+            self.authService.logOut();
+            resolve();
+          }).then(() => {
+            this.router.navigate(['/home']);
+          });
+        } else {
+          this.authService.logOut();
+        }
+      }
+    });
   }
 
   logIn() {

@@ -4,6 +4,11 @@
     "params": "username, password",
     "content": "用户登录"
   },
+  "userLogOut": {
+    "wsUrl": "ng2LifeStyle/logOut",
+    "params": "不传参数",
+    "content": "退出登录"
+  },
   "getTestData": {
     "wsUrl": "game/allGameRoleList",
     "params": "pages_index, pages_total, user_id",
