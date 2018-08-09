@@ -14,9 +14,25 @@ app-suspension {
       padding: 10px;
       font-size: 14px;
 
+      .filmMajor {
+        overflow: hidden;
+        display: -webkit-box;
+        white-space: normal !important;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+
       .introduce {
         max-height: 170px;
         overflow: hidden;
+        display: -webkit-box;
+        white-space: normal !important;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
       }
     }
 

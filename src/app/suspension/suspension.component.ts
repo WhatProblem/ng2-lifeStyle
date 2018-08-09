@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { SuspensionService } from './suspension.service';
 
 @Component({
   selector: 'app-suspension',
@@ -9,7 +10,9 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 export class SuspensionComponent implements OnInit {
   public detailData: object = null;
 
-  constructor() { }
+  constructor(
+    private suspensionService: SuspensionService
+  ) { }
 
   @Input() set suspension(data: object) {
     if (data) {
@@ -19,6 +22,18 @@ export class SuspensionComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  // 加锁/解锁
+  changeLock(data) {
+    let param = {
+      film_id: '',
+      film_lock: '',
+      user_id: '0001'
+    };
+    this.suspensionService.changeLock('post', 'popFilmLock', param).then(res => {
+      console.log(res);
+    });
   }
 
 }

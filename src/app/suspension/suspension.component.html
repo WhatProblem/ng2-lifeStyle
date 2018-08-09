@@ -21,15 +21,15 @@
   <div class="text item">
     <div><span>年代：</span><span>{{detailData?.film_time}}</span></div>
   </div>
-  <div class="text item">
+  <div class="text item filmMajor">
     <div><span>主演：</span><span>{{detailData?.film_major}}</span></div>
   </div>
   <div class="text item introduce">
-    <div><span>简介：</span><span title="提示内容">{{detailData?.film_desc}}</span></div>
+    <div><span>简介：</span><span>{{detailData?.film_desc}}</span></div>
   </div>
   <div class="text item">
     <div class="scoreOrFav">
-      <div class="lock">
+      <div class="lock" (click)="changeLock(detailData)">
         <span *ngIf="detailData?.film_lock === '0'"><i class="myFont ng2-lifeStyle-suo1"></i>未加锁</span>
         <span *ngIf="detailData?.film_lock === '1'"><i class="myFont ng2-lifeStyle-suo"></i>加锁</span>
       </div>
