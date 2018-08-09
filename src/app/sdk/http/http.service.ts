@@ -9,18 +9,27 @@ import {
 import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/toPromise';
 
-const baseUrl = 'http://localhost:9000/';
 
 @Injectable()
 export class HttpService {
   public wsInterface: object;
+  public nodeOrPhp: boolean = true;
 
   constructor(public http: HttpClient) { }
 
   request(method: string, url: string, params?: any): Promise<any> {
     let self = this;
     let resp = null;
-    return this.http.get('../../../assets/wsApi/interface.json').toPromise().then(res => {
+    let baseUrl = null;
+    let apiJson = null;
+    if (this.nodeOrPhp) { // php interface
+      baseUrl = 'http://127.0.0.1/apiLifeStyle/api/';
+      apiJson = '../../../assets/wsApi/interfacePhp.json';
+    } else {
+      baseUrl = 'http://localhost:9000/';
+      apiJson = '../../../assets/wsApi/interface.json';
+    }
+    return this.http.get(apiJson).toPromise().then(res => {
       let apiUrl = res[url]['wsUrl'];
       let param = null;
       let httpUrl = null;

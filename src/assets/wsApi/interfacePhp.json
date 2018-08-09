@@ -1,0 +1,32 @@
+{
+  "userLogin": {
+    "wsUrl": "ng2LifeStyle/login",
+    "params": "username, password",
+    "content": "用户登录"
+  },
+  "userLogOut": {
+    "wsUrl": "ng2LifeStyle/logOut",
+    "params": "不传参数",
+    "content": "退出登录"
+  },
+  "getTestData": {
+    "wsUrl": "game/allGameRoleList",
+    "params": "pages_index, pages_total, user_id",
+    "content": "测试请求接口封装"
+  },
+  "homePopFilm": {
+    "wsUrl": "home/homePopFilm/index.php",
+    "param": "film_score",
+    "content": "homePopFilm部分数据 home部分"
+  },
+  "homePopMusic": {
+    "wsUrl": "home/homePopMusic/index.php",
+    "param": "music_score",
+    "content": "homePopMusic部分数据 home部分"
+  },
+  "homePopGame": {
+    "wsUrl": "home/homePopGame/index.php",
+    "param": "game_power",
+    "content": "homePopGame部分数据 home部分"
+  }
+}
