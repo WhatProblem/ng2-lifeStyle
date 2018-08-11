@@ -33,5 +33,10 @@
     "wsUrl": "home/homePopFilm/favOrLock.php",
     "param": "film_id, film_lock, film_favorite,user_id",
     "content": "homePopFilm部分数据favorite lock部分"
+  },
+  "popMusicFav": {
+    "wsUrl": "home/homePopMusic/popMusicFav.php",
+    "param":"music_id, music_favorite,user_id",
+    "content": "homePopMusic部分 收藏"
   }
 }

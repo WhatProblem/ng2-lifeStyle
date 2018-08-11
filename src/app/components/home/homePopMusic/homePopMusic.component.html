@@ -11,14 +11,17 @@
           <div class="popMusicPoster">
             <div class="topImg" (mouseenter)="showPlayIcon(i)" (mouseleave)="hidePlayIcon()">
               <img [src]="musicData.music_detail_poster" alt="">
-              <div [routerLink]="['homeDetail', musicData.music_name]" [queryParams]="{homeId: 'homeMusicDetail'}" class="myFont ng2-lifeStyle-bofang1 playIcon" [ngStyle]="{display: i === curIndex ? 'block' : 'none'}"></div>
+              <div [routerLink]="['homeDetail', musicData.music_name]" [queryParams]="{homeId: 'homeMusicDetail'}" class="myFont ng2-lifeStyle-bofang1 playIcon"
+                [ngStyle]="{display: i === curIndex ? 'block' : 'none'}"></div>
               <div class="scoreOrPlay">
                 <div class="score">
                   <span class="myFont ng2-lifeStyle-erji"></span>
                   <span>{{musicData.music_score}}</span>
                 </div>
-                <span *ngIf="musicData.music_favorite == 0" class="myFont ng2-lifeStyle-shoucang1"></span>
-                <span *ngIf="musicData.music_favorite != 0" class="myFont ng2-lifeStyle-shoucang"></span>
+                <div (click)="changeFav(musicData)">
+                  <span *ngIf="musicData.music_favorite === '0'" class="myFont ng2-lifeStyle-shoucang1 favHeart"><i>未收藏</i></span>
+                  <span *ngIf="musicData.music_favorite === '1'" class="myFont ng2-lifeStyle-shoucang favHeart"><i>已收藏</i></span>
+                </div>
               </div>
             </div>
             <div class="bottomTitle">

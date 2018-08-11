@@ -33,5 +33,10 @@
     "wsUrl": "home/popFilmLockOrFav",
     "param": "film_id, film_lock, film_favorite,user_id",
     "content": "homePopFilm部分数据 lock部分"
+  },
+  "popMusicFav": {
+    "wsUrl": "home/popMusicFav",
+    "param":"music_id, music_favorite,user_id",
+    "content": "homePopMusic部分 收藏"
   }
 }

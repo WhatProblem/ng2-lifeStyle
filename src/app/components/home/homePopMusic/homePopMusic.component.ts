@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import Swiper from 'swiper';
+import { HttpService } from '../../../sdk/http/http.service';
 
 @Component({
   selector: 'home-popMusic',
@@ -11,7 +12,9 @@ export class HomePopMusicComponent implements OnInit {
   private homePopPoster: object[] = [];
   private curIndex: number;
 
-  constructor() { }
+  constructor(
+    public httpService: HttpService
+  ) { }
 
   @Input() set popMusic(data) {
     if (data.length) {
@@ -44,5 +47,26 @@ export class HomePopMusicComponent implements OnInit {
 
   hidePlayIcon() {
     this.curIndex = null;
+  }
+
+  changeFav(val) {
+    let self = this;
+    let param = {
+      music_id: val.music_id,
+      music_favorite: val.music_favorite === '0' ? '1' : '0',
+      user_id: '0001'
+    };
+    this.httpService.request('post', 'popMusicFav', param).then(res => {
+      if (res['code'] === 200) {
+        self.homePopPoster.forEach((item, index) => {
+          if (item) {
+            if (val['music_id'] === item['music_id']) {
+              item['music_favorite'] = param['music_favorite'];
+              return;
+            }
+          }
+        });
+      }
+    });
   }
 }

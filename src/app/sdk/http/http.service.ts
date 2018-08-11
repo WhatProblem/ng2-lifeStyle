@@ -13,7 +13,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class HttpService {
   public wsInterface: object;
-  public nodeOrPhp: boolean = false;
+  public nodeOrPhp: boolean = true;
 
   constructor(public http: HttpClient) { }
 
