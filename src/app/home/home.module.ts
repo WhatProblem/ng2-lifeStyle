@@ -21,6 +21,7 @@ import { HomePopMusicComponent } from '../components/home/homePopMusic/homePopMu
 import { HomePopGameComponent } from '../components/home/homePopGame/homePopGame.component';
 
 import { HomeDetailComponent } from './homeDetail/homeDetail.component';
+import { HomeDetailFilterComponent } from '../components/home/homeDetailFilter/homeDetailFilter.component';
 import { FilmDetailTopModule } from '../components/filmDetailTop/filmDetailTop.module';
 import { MusicDetailTopModule } from '../components/musicDetailTop/musicDetailTop.module';
 import { GameDetailTopModule } from '../components/gameDetailTop/gameDetailTop.module';
@@ -43,6 +44,7 @@ import { GameDetailTopModule } from '../components/gameDetailTop/gameDetailTop.m
   declarations: [
     HomeComponent,
     HomeDetailComponent,
+    HomeDetailFilterComponent,
     HomeBanComponent,
     HomePopFilmComponent,
     HomePopMusicComponent,

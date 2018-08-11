@@ -1,0 +1,60 @@
+<div class="homeDetailFilter">
+  <div el-container direction="vertical" class="demo-box">
+    <div el-header height="90px">
+      <div class="filterTitle">
+        <div class="musicYear">
+          <div>年份：</div>
+          <div class="yearContent">
+            <el-radio-group [model]="'0'">
+              <el-radio label="0">全部</el-radio>
+              <el-radio label="20">当代</el-radio>
+              <el-radio label="90">90年代</el-radio>
+              <el-radio label="80">80年代</el-radio>
+              <el-radio label="70">70年代</el-radio>
+              <el-radio label="60">60年代</el-radio>
+            </el-radio-group>
+          </div>
+        </div>
+        <div class="musicType">
+          <div>类型：</div>
+          <div class="yearContent">
+            <el-radio-group [model]="'0'">
+              <el-radio label="0">全部</el-radio>
+              <el-radio label="1">流行</el-radio>
+              <el-radio label="2">怀旧</el-radio>
+              <el-radio label="3">伤感</el-radio>
+              <el-radio label="4">寂寞</el-radio>
+              <el-radio label="5">安静</el-radio>
+              <el-radio label="6">DJ</el-radio>
+              <el-radio label="7">儿童</el-radio>
+            </el-radio-group>
+          </div>
+        </div>
+        <div class="musicScore">
+          <div>评分：</div>
+          <div class="yearContent">
+            <el-radio-group [model]="'0'">
+              <el-radio label="0">全部</el-radio>
+              <el-radio label="9">9.0以上</el-radio>
+              <el-radio label="8">8.0以上</el-radio>
+              <el-radio label="7">7.0以上</el-radio>
+              <el-radio label="6">6.0以上</el-radio>
+              <el-radio label="5">5.0以上</el-radio>
+            </el-radio-group>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div el-main>
+      <div class="showSection" *ngFor="let tests of test;let i=index">
+        <div class="showBg" (mouseenter)="showCover(i)">
+          <div class="img">
+            <img src="../../../../assets/img/homePopMusic/1.jpg" alt="">
+          </div>
+          <div class="bgTitle">名称部分</div>
+          <div class="cover" (mouseleave)="hideCover()" [ngStyle]="{display: (curIndex === i) ? 'block' : 'none'}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
