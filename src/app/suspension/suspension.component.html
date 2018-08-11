@@ -33,7 +33,7 @@
         <span *ngIf="detailData?.film_lock === '0'"><i class="myFont ng2-lifeStyle-suo1"></i>未加锁</span>
         <span *ngIf="detailData?.film_lock === '1'"><i class="myFont ng2-lifeStyle-suo"></i>加锁</span>
       </div>
-      <div class="fav">
+      <div class="fav" (click)="changeFav(detailData)">
         <span *ngIf="detailData?.film_favorite === '1'">未收藏<i class="myFont ng2-lifeStyle-shoucang1"></i></span>
         <span *ngIf="detailData?.film_favorite === '0'">收藏<i class="myFont ng2-lifeStyle-shoucang"></i></span>
       </div>

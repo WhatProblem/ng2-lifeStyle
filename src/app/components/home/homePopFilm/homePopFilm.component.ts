@@ -68,4 +68,26 @@ export class HomePopFilmComponent implements OnInit {
   hideSuspension() {
     this.suspensionCtrl = false;
   }
+
+  // 加锁/解锁修改
+  lockChange(val) {
+    this.homePopPoster.forEach((item, index) => {
+      if (item) {
+        if (val['film_id'] === item['film_id']) {
+          item['film_lock'] = val['film_lock'];
+        }
+      }
+    });
+  }
+
+  // 收藏/取消收藏
+  favChange(val) {
+    this.homePopPoster.forEach((item, index) => {
+      if (item) {
+        if (val['film_id'] === item['film_id']) {
+          item['film_favorite'] = val['film_favorite'];
+        }
+      }
+    });
+  }
 }

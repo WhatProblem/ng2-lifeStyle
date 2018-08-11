@@ -14,7 +14,7 @@ export class SuspensionService {
    * @param {film_lock} 0:未加锁
    * @param {user_id} 用户id
    */
-  changeLock(methods: string, url: string, param?: any): Promise<any> {
+  changeLockOrFav(methods: string, url: string, param?: any): Promise<any> {
     return this.httpService.request(methods, url, param).then(res => {
       return res;
     });

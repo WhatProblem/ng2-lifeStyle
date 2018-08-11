@@ -28,5 +28,10 @@
     "wsUrl": "home/homePopGame/index.php",
     "param": "game_power",
     "content": "homePopGame部分数据 home部分"
+  },
+  "popFilmLockOrFav": {
+    "wsUrl": "home/homePopFilm/favOrLock.php",
+    "param": "film_id, film_lock, film_favorite,user_id",
+    "content": "homePopFilm部分数据favorite lock部分"
   }
 }

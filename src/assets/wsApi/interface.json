@@ -29,9 +29,9 @@
     "param": "game_power",
     "content": "homePopGame部分数据 home部分"
   },
-  "popFilmLock": {
-    "wsUrl": "home/popFilmLock",
-    "param": "film_id, film_lock, user_id",
+  "popFilmLockOrFav": {
+    "wsUrl": "home/popFilmLockOrFav",
+    "param": "film_id, film_lock, film_favorite,user_id",
     "content": "homePopFilm部分数据 lock部分"
   }
 }

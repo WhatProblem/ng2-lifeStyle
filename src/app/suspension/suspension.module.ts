@@ -7,6 +7,7 @@ import { ElModule } from 'element-angular';
 import 'element-angular/theme/index.css';
 
 import { SuspensionComponent } from './suspension.component';
+import { SuspensionService } from './suspension.service';
 
 @NgModule({
   imports: [
@@ -19,6 +20,9 @@ import { SuspensionComponent } from './suspension.component';
   ],
   exports: [
     SuspensionComponent
+  ],
+  providers: [
+    SuspensionService
   ]
 })
 

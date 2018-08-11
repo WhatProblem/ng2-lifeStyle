@@ -18,6 +18,6 @@
       <div class="swiper-button-next" id="homeFilmNext"></div>
       <div class="swiper-button-prev" id="homeFilmPrev"></div>
     </div>
-    <app-suspension [suspension]="homeFilmPopData" (mouseenter)="showSuspension()" (mouseleave)="hideSuspension()" class="suspension" [ngStyle]="{visibility: suspensionCtrl ? 'visible' : 'hidden'}"></app-suspension>
+    <app-suspension [suspension]="homeFilmPopData" (lockChange)="lockChange($event)" (favChange)="favChange($event)" (mouseenter)="showSuspension()" (mouseleave)="hideSuspension()" class="suspension" [ngStyle]="{visibility: suspensionCtrl ? 'visible' : 'hidden'}"></app-suspension>
   </div>
 </div>
