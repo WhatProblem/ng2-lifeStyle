@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router, Route, Routes } from '@angular/router';
 import { SuspensionService } from './suspension.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class SuspensionComponent implements OnInit {
   public detailData: object = null;
 
   constructor(
+    public router: Router,
     private suspensionService: SuspensionService
   ) { }
 
@@ -57,6 +59,11 @@ export class SuspensionComponent implements OnInit {
         self.detailData['film_favorite'] = param['film_favorite'];
       }
     });
+  }
+
+  // 导航
+  navigate(data) {
+    this.router.navigate(['/home/homeDetail/' + data.film_id], { queryParams: { homeId: 'homeFilmDetail' } });
   }
 
 }
