@@ -9,8 +9,15 @@ import { Component, OnInit, Input, Output, ViewEncapsulation } from '@angular/co
 export class HomeDetailFilterComponent implements OnInit {
   private test: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   private curIndex: number = null;
+  private curShowDetail: string = null;
 
   constructor() { }
+
+  @Input() set filterType(data) {
+    if (data) {
+      this.curShowDetail = data;
+    }
+  }
 
   ngOnInit() {
 

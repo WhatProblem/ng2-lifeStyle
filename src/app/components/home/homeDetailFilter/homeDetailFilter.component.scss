@@ -26,12 +26,15 @@
 
   .filterTitle {
     width: 100%;
-    height: 90px;
+    // height: 90px;
     color: #ffd04b;
     font-size: 14px;
 
     .musicYear,
     .musicType,
+    .filmType,
+    .gameType,
+    .gameDifficult,
     .musicScore {
       width: 100%;
       height: 30px;
@@ -55,9 +58,10 @@
       position: absolute;
       top: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.85);
-      width: 20px;
+      background: rgba(0, 0, 0, 0.75);
+      width: 16px;
       border-radius: 2px;
+      text-align: center;
     }
 
     img {

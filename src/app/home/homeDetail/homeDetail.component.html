@@ -3,5 +3,5 @@
   <film-filmDetailTop *ngIf="showComponent === 'homeFilmDetail'"></film-filmDetailTop>
   <music-musicDetailTop *ngIf="showComponent === 'homeMusicDetail'"></music-musicDetailTop>
   <game-gameDetailTop *ngIf="showComponent === 'homeGameDetail'"></game-gameDetailTop>
-  <homeDetail-filter></homeDetail-filter>
+  <homeDetail-filter [filterType]="showComponent"></homeDetail-filter>
 </div>

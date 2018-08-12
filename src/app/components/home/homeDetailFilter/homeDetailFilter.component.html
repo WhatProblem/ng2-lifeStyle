@@ -1,8 +1,8 @@
 <div class="homeDetailFilter">
   <div el-container direction="vertical" class="demo-box">
-    <div el-header height="90px">
+    <div el-header>
       <div class="filterTitle">
-        <div class="musicYear">
+        <div class="musicYear" *ngIf="curShowDetail!=='homeGameDetail'">
           <div>年份：</div>
           <div class="yearContent">
             <el-radio-group [model]="'0'">
@@ -15,7 +15,7 @@
             </el-radio-group>
           </div>
         </div>
-        <div class="musicType">
+        <div class="musicType" *ngIf="curShowDetail==='homeMusicDetail'">
           <div>类型：</div>
           <div class="yearContent">
             <el-radio-group [model]="'0'">
@@ -27,6 +27,38 @@
               <el-radio label="5">安静</el-radio>
               <el-radio label="6">DJ</el-radio>
               <el-radio label="7">儿童</el-radio>
+            </el-radio-group>
+          </div>
+        </div>
+        <div class="filmType" *ngIf="curShowDetail==='homeFilmDetail'">
+          <div>类型：</div>
+          <div class="yearContent">
+            <el-radio-group [model]="'9'">
+              <el-radio label="9">全部</el-radio>
+              <el-radio label="0">科幻</el-radio>
+              <el-radio label="1">战争</el-radio>
+              <el-radio label="2">爱情</el-radio>
+              <el-radio label="3">古装</el-radio>
+              <el-radio label="4">动作</el-radio>
+              <el-radio label="5">玄幻</el-radio>
+              <el-radio label="8">喜剧</el-radio>
+              <el-radio label="6">动漫</el-radio>
+              <el-radio label="7">娱乐</el-radio>
+            </el-radio-group>
+          </div>
+        </div>
+        <div class="gameType" *ngIf="curShowDetail==='homeGameDetail'">
+          <div>类型：</div>
+          <div class="yearContent">
+            <el-radio-group [model]="'0'">
+              <el-radio label="0">全部</el-radio>
+              <el-radio label="1">坦克</el-radio>
+              <el-radio label="2">战士</el-radio>
+              <el-radio label="3">刺客</el-radio>
+              <el-radio label="4">法师</el-radio>
+              <el-radio label="5">ADC</el-radio>
+              <el-radio label="6">辅助</el-radio>
+              <el-radio label="7">打野</el-radio>
             </el-radio-group>
           </div>
         </div>
@@ -43,6 +75,18 @@
             </el-radio-group>
           </div>
         </div>
+        <div class="gameDifficult" *ngIf="curShowDetail==='homeGameDetail'">
+          <div>难度：</div>
+          <div class="yearContent">
+            <el-radio-group [model]="'0'">
+              <el-radio label="0">全部</el-radio>
+              <el-radio label="1">容易</el-radio>
+              <el-radio label="2">一般</el-radio>
+              <el-radio label="3">较难</el-radio>
+              <el-radio label="4">困难</el-radio>
+            </el-radio-group>
+          </div>
+        </div>
       </div>
     </div>
     <div el-main>
@@ -50,7 +94,9 @@
         <div el-row>
           <div el-col span="4" *ngFor="let tests of test;let i=index">
             <el-card body-style="padding: 0px">
-              <div class="myFont ng2-lifeStyle-yinle musicLogo"></div>
+              <div *ngIf="curShowDetail==='homeMusicDetail'" class="myFont ng2-lifeStyle-yinle musicLogo"></div>
+              <div *ngIf="curShowDetail==='homeFilmDetail'" class="myFont ng2-lifeStyle-bofang-shipin musicLogo"></div>
+              <div *ngIf="curShowDetail==='homeGameDetail'" class="myFont ng2-lifeStyle-fenlei-yingxionglianmeng musicLogo"></div>
               <img src="../../../../assets/img/homePopMusic/1.jpg" class="image">
               <div>
                 <!--<span>好吃的汉堡</span>-->
@@ -58,7 +104,8 @@
                   <!--<time class="time">{{ currentDate() | date: 'dd/MM/yyyy' }}</time>-->
                   <!--<el-button type="text" class="button">详情</el-button>-->
                   <span>
-                    <i class="myFont ng2-lifeStyle-bofang3"></i>
+                    <i *ngIf="curShowDetail!=='homeGameDetail'" class="myFont ng2-lifeStyle-bofang3"></i>
+                    <i  *ngIf="curShowDetail==='homeGameDetail'" class="myFont ng2-lifeStyle-jian"></i>
                   </span>
                   <span>标题</span>
                 </div>
