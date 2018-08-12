@@ -46,13 +46,25 @@
       </div>
     </div>
     <div el-main>
-      <div class="showSection" *ngFor="let tests of test;let i=index">
-        <div class="showBg" (mouseenter)="showCover(i)">
-          <div class="img">
-            <img src="../../../../assets/img/homePopMusic/1.jpg" alt="">
+      <div class="showSection">
+        <div el-row>
+          <div el-col span="4" *ngFor="let tests of test;let i=index">
+            <el-card body-style="padding: 0px">
+              <div class="myFont ng2-lifeStyle-yinle musicLogo"></div>
+              <img src="../../../../assets/img/homePopMusic/1.jpg" class="image">
+              <div>
+                <!--<span>好吃的汉堡</span>-->
+                <div class="bottom clearfix">
+                  <!--<time class="time">{{ currentDate() | date: 'dd/MM/yyyy' }}</time>-->
+                  <!--<el-button type="text" class="button">详情</el-button>-->
+                  <span>
+                    <i class="myFont ng2-lifeStyle-bofang3"></i>
+                  </span>
+                  <span>标题</span>
+                </div>
+              </div>
+            </el-card>
           </div>
-          <div class="bgTitle">名称部分</div>
-          <div class="cover" (mouseleave)="hideCover()" [ngStyle]="{display: (curIndex === i) ? 'block' : 'none'}"></div>
         </div>
       </div>
     </div>

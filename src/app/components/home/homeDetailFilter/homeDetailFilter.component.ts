@@ -23,4 +23,8 @@ export class HomeDetailFilterComponent implements OnInit {
   hideCover() {
     this.curIndex = null;
   }
+
+  currentDate() {
+    return new Date();
+  }
 }
