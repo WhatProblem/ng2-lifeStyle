@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Router, ActivatedRoute, Route, Routes } from '@angular/router';
 import Swiper from 'swiper';
 
 @Component({
@@ -12,7 +13,9 @@ export class HomePopGameComponent implements OnInit {
   private popGamePoster: object[] = [];
   private ctrlShow: boolean = false;
 
-  constructor() { }
+  constructor(
+    public router: Router
+  ) { }
 
   @Input() set popGame(data) {
     if (data.length) {
@@ -63,5 +66,10 @@ export class HomePopGameComponent implements OnInit {
 
   hideSuspension() {
     this.ctrlShow = false;
+  }
+
+  // 导航
+  navigate(data) {
+    this.router.navigate(['/home/homeDetail/' + data.game_role], { queryParams: { homeId: 'homeGameDetail', gameId: data.game_id } });
   }
 }

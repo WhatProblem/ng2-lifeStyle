@@ -8,7 +8,7 @@
     <div class="swiper-container" id="gameContainer">
       <div class="swiper-wrapper">
         <div class="swiper-slide" *ngFor="let item of popGamePoster;let i=index">
-          <div class="homeGamePoster">
+          <div class="homeGamePoster" (click)="navigate(item)">
             <img [src]="item.game_detail_poster" alt="" (mousemove)="showIntroduce($event, i, item)" (mouseleave)="hideSuspension()">
             <div class="favOrLock">
               <div *ngIf="item.game_lock === 0" class="lockIcon"><span class="myFont ng2-lifeStyle-suo1"></span>未加锁</div>

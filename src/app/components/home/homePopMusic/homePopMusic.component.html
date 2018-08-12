@@ -11,7 +11,7 @@
           <div class="popMusicPoster">
             <div class="topImg" (mouseenter)="showPlayIcon(i)" (mouseleave)="hidePlayIcon()">
               <img [src]="musicData.music_detail_poster" alt="">
-              <div [routerLink]="['homeDetail', musicData.music_name]" [queryParams]="{homeId: 'homeMusicDetail'}" class="myFont ng2-lifeStyle-bofang1 playIcon"
+              <div [routerLink]="['homeDetail', musicData.music_name]" [queryParams]="{homeId: 'homeMusicDetail', musicId: musicData.music_id}" class="myFont ng2-lifeStyle-bofang1 playIcon"
                 [ngStyle]="{display: i === curIndex ? 'block' : 'none'}"></div>
               <div class="scoreOrPlay">
                 <div class="score">

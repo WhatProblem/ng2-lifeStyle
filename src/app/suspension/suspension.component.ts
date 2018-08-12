@@ -63,7 +63,7 @@ export class SuspensionComponent implements OnInit {
 
   // 导航
   navigate(data) {
-    this.router.navigate(['/home/homeDetail/' + data.film_id], { queryParams: { homeId: 'homeFilmDetail' } });
+    this.router.navigate(['/home/homeDetail/' + data.film_id], { queryParams: { homeId: 'homeFilmDetail', filmId: data.film_id } });
   }
 
 }
