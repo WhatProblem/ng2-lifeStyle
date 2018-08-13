@@ -5,20 +5,20 @@
         <div class="musicYear" *ngIf="curShowDetail!=='homeGameDetail'">
           <div>年份：</div>
           <div class="yearContent">
-            <el-radio-group [model]="'0'">
+            <el-radio-group [(model)]="timeYear" (change)="selectTimeYear(timeYear)">
               <el-radio label="0">全部</el-radio>
-              <el-radio label="20">当代</el-radio>
-              <el-radio label="199">90年代</el-radio>
-              <el-radio label="198">80年代</el-radio>
-              <el-radio label="197">70年代</el-radio>
-              <el-radio label="196">60年代</el-radio>
+              <el-radio label="20">00后</el-radio>
+              <el-radio label="199">90后</el-radio>
+              <el-radio label="198">80后</el-radio>
+              <el-radio label="197">70后</el-radio>
+              <el-radio label="196">60后</el-radio>
             </el-radio-group>
           </div>
         </div>
         <div class="musicType" *ngIf="curShowDetail==='homeMusicDetail'">
           <div>类型：</div>
           <div class="yearContent">
-            <el-radio-group [model]="'0'">
+            <el-radio-group [(model)]="musicType" (change)="selectMusicType(musicType)">
               <el-radio label="0">全部</el-radio>
               <el-radio label="1">流行</el-radio>
               <el-radio label="2">怀旧</el-radio>
@@ -33,24 +33,24 @@
         <div class="filmType" *ngIf="curShowDetail==='homeFilmDetail'">
           <div>类型：</div>
           <div class="yearContent">
-            <el-radio-group [model]="'9'">
-              <el-radio label="9">全部</el-radio>
-              <el-radio label="0">科幻</el-radio>
+            <el-radio-group [(model)]="filmType" (change)="selectFilmType(filmType)">
+              <el-radio label="0">全部</el-radio>
               <el-radio label="1">战争</el-radio>
               <el-radio label="2">爱情</el-radio>
               <el-radio label="3">古装</el-radio>
               <el-radio label="4">动作</el-radio>
               <el-radio label="5">玄幻</el-radio>
-              <el-radio label="8">喜剧</el-radio>
-              <el-radio label="6">动漫</el-radio>
-              <el-radio label="7">娱乐</el-radio>
+              <el-radio label="6">喜剧</el-radio>
+              <el-radio label="7">科幻</el-radio>
+              <el-radio label="8">动漫</el-radio>
+              <el-radio label="9">娱乐</el-radio>
             </el-radio-group>
           </div>
         </div>
         <div class="gameType" *ngIf="curShowDetail==='homeGameDetail'">
           <div>类型：</div>
           <div class="yearContent">
-            <el-radio-group [model]="'0'">
+            <el-radio-group [(model)]="gameType" (change)="selectGameType(gameType)">
               <el-radio label="0">全部</el-radio>
               <el-radio label="1">坦克</el-radio>
               <el-radio label="2">战士</el-radio>
@@ -65,7 +65,7 @@
         <div class="musicScore">
           <div>评分：</div>
           <div class="yearContent">
-            <el-radio-group [model]="'0'">
+            <el-radio-group [(model)]="projScore" (change)="selectProjScore(projScore)">
               <el-radio label="0">全部</el-radio>
               <el-radio label="9">9.0以上</el-radio>
               <el-radio label="8">8.0以上</el-radio>
@@ -78,7 +78,7 @@
         <div class="gameDifficult" *ngIf="curShowDetail==='homeGameDetail'">
           <div>难度：</div>
           <div class="yearContent">
-            <el-radio-group [model]="'0'">
+            <el-radio-group [(model)]="gameDifficult" (change)="selectGameDifficult(gameDifficult)">
               <el-radio label="0">全部</el-radio>
               <el-radio label="1">容易</el-radio>
               <el-radio label="2">一般</el-radio>
@@ -90,7 +90,7 @@
       </div>
     </div>
     <div el-main>
-      <div class="showSection">
+      <div #showSection class="showSection">
         <div el-row>
           <div el-col span="4" *ngFor="let item of homeDetailData;let i=index">
             <el-card body-style="padding: 0px">

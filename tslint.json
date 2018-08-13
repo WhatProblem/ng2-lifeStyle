@@ -12,6 +12,7 @@
   ],
   "rules": {
     "forin": false,
+    "semicolon": [true, "never"],
     "object-literal-shorthand": false,
     "prefer-const": false,
     "no-unused-expression": [true, "allow-fast-null-checks"],

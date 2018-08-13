@@ -11,6 +11,12 @@ export class HomeDetailFilterComponent implements OnInit {
   private homeDetailData: object[] = [];
   private curIndex: number = null;
   private curShowDetail: string = null;
+  private timeYear: string = '0';
+  private musicType: string = '0';
+  private filmType: string = '0';
+  private gameType: string = '0';
+  private projScore: string = '0';
+  private gameDifficult: string = '0';
 
   constructor(
     public httpService: HttpService,
@@ -62,25 +68,40 @@ export class HomeDetailFilterComponent implements OnInit {
     console.log(this.showSection.nativeElement.getBoundingClientRect());
   }
 
-  showCover(index) {
-    this.curIndex = index;
-  }
-
-  hideCover() {
-    this.curIndex = null;
-  }
-
-  currentDate() {
-    return new Date();
-  }
+  // currentDate() {
+  //   return new Date();
+  // }
 
   homeDetailFilter(param) {
     let self = this;
     this.httpService.request('get', 'homeDetailFilter', param).then(res => {
       if (res['code'] === 200) {
         self.homeDetailData = res['data']['data'];
-        console.log(self.homeDetailData);
       }
     });
+  }
+
+  selectTimeYear(val) {
+    console.log(val);
+  }
+
+  selectMusicType(val) {
+    console.log(val);
+  }
+
+  selectFilmType(val) {
+    console.log(val);
+  }
+
+  selectGameType(val) {
+    console.log(val);
+  }
+
+  selectProjScore(val) {
+    console.log(val);
+  }
+
+  selectGameDifficult(val) {
+    console.log(val);
   }
 }
