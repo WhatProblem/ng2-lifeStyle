@@ -9,11 +9,10 @@ import {
 import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/toPromise';
 
-
 @Injectable()
 export class HttpService {
   public wsInterface: object;
-  public nodeOrPhp: boolean = true;
+  public nodeOrPhp: boolean = false;
 
   constructor(public http: HttpClient) { }
 

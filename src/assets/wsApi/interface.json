@@ -36,7 +36,12 @@
   },
   "popMusicFav": {
     "wsUrl": "home/popMusicFav",
-    "param":"music_id, music_favorite,user_id",
+    "param": "music_id, music_favorite,user_id",
     "content": "homePopMusic部分 收藏"
+  },
+  "homeDetailFilter": {
+    "wsUrl": "home/homeDetailFilter",
+    "param": "id, lock, favorite,user_id",
+    "content": "homeDetailFilter部分数据公共接口 homeDetail部分"
   }
 }

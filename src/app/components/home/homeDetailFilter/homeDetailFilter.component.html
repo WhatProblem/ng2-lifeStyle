@@ -8,10 +8,10 @@
             <el-radio-group [model]="'0'">
               <el-radio label="0">全部</el-radio>
               <el-radio label="20">当代</el-radio>
-              <el-radio label="90">90年代</el-radio>
-              <el-radio label="80">80年代</el-radio>
-              <el-radio label="70">70年代</el-radio>
-              <el-radio label="60">60年代</el-radio>
+              <el-radio label="199">90年代</el-radio>
+              <el-radio label="198">80年代</el-radio>
+              <el-radio label="197">70年代</el-radio>
+              <el-radio label="196">60年代</el-radio>
             </el-radio-group>
           </div>
         </div>
@@ -92,12 +92,12 @@
     <div el-main>
       <div class="showSection">
         <div el-row>
-          <div el-col span="4" *ngFor="let tests of test;let i=index">
+          <div el-col span="4" *ngFor="let item of homeDetailData;let i=index">
             <el-card body-style="padding: 0px">
               <div *ngIf="curShowDetail==='homeMusicDetail'" class="myFont ng2-lifeStyle-yinle musicLogo"></div>
               <div *ngIf="curShowDetail==='homeFilmDetail'" class="myFont ng2-lifeStyle-bofang-shipin musicLogo"></div>
               <div *ngIf="curShowDetail==='homeGameDetail'" class="myFont ng2-lifeStyle-fenlei-yingxionglianmeng musicLogo"></div>
-              <img src="../../../../assets/img/homePopMusic/1.jpg" class="image">
+              <img src="{{item.film_detail_poster || item.music_detail_poster || item.game_detail_poster}}" class="image">
               <div>
                 <!--<span>好吃的汉堡</span>-->
                 <div class="bottom clearfix">
@@ -107,7 +107,7 @@
                     <i *ngIf="curShowDetail!=='homeGameDetail'" class="myFont ng2-lifeStyle-bofang3"></i>
                     <i  *ngIf="curShowDetail==='homeGameDetail'" class="myFont ng2-lifeStyle-jian"></i>
                   </span>
-                  <span>标题</span>
+                  <span class="sortName">{{item.film_name || item.music_name || item.game_role}}</span>
                 </div>
               </div>
             </el-card>
