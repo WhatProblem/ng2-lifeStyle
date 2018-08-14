@@ -39,9 +39,19 @@
     "param": "music_id, music_favorite,user_id",
     "content": "homePopMusic部分 收藏"
   },
+  "popGameFavOrLock": {
+    "wsUrl": "home/gameFavOrLock",
+    "param": "game_id, game_lock, game_favorite, user_id",
+    "content": "homePopGame部分加锁收藏 home部分"
+  },
   "homeDetailFilter": {
     "wsUrl": "home/homeDetailFilter",
     "param": "id, lock, favorite,user_id",
     "content": "homeDetailFilter部分数据公共接口 homeDetail部分"
+  },
+  "filmDetail": {
+    "wsUrl": "film/filmDetail",
+    "param": "film_id, user_id",
+    "content": "film详情数据"
   }
 }

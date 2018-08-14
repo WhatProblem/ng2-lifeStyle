@@ -67,6 +67,10 @@
           .lockIcon,
           .favIcon {
             cursor: pointer;
+
+            span {
+              font-size: 14px;
+            }
           }
         }
 

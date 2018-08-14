@@ -1,7 +1,7 @@
 <div class="homeDetail">
   <app-breadcrumb [homeBread]="homeBread"></app-breadcrumb>
-  <film-filmDetailTop *ngIf="showComponent === 'homeFilmDetail'"></film-filmDetailTop>
-  <music-musicDetailTop *ngIf="showComponent === 'homeMusicDetail'"></music-musicDetailTop>
-  <game-gameDetailTop *ngIf="showComponent === 'homeGameDetail'"></game-gameDetailTop>
+  <film-filmDetailTop *ngIf="showComponent === 'homeFilmDetail'" [filmDetailId]="filmDetailId"></film-filmDetailTop>
+  <music-musicDetailTop *ngIf="showComponent === 'homeMusicDetail'" [musicDetailId]="musicDetailId"></music-musicDetailTop>
+  <game-gameDetailTop *ngIf="showComponent === 'homeGameDetail'" [gameDetailId]="gameDetailId"></game-gameDetailTop>
   <homeDetail-filter [filterType]="showComponent"></homeDetail-filter>
 </div>

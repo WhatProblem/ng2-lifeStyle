@@ -9,6 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeDetailComponent implements OnInit {
   public homeBread: object[] = [];
+  public filmDetailId: string = null;
+  public musicDetailId: string = null;
+  public gameDetailId: string = null;
   private showComponent: string = null;
 
   constructor(
@@ -18,6 +21,9 @@ export class HomeDetailComponent implements OnInit {
   ngOnInit() {
     let detailSortId = this.route.snapshot.paramMap.get('id');
     this.showComponent = this.route.snapshot.queryParams['homeId'];
+    this.filmDetailId = this.route.snapshot.queryParams['filmId'];
+    this.musicDetailId = this.route.snapshot.queryParams['musicId'];
+    this.gameDetailId = this.route.snapshot.queryParams['gameId'];
     console.log(this.showComponent);
     this.route.data.subscribe(data => {
       let objFirst = { title: 'home', url: 'home', name: '首页' };

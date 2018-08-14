@@ -6,10 +6,18 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./musicDetailTop.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
- 
+
 export class MusicDetailTopComponent implements OnInit {
-  constructor() {}
-  
+  private musicId: string = null;
+
+  constructor() { }
+
+  @Input() set musicDetailId(data) {
+    if (data) {
+      this.musicId = data;
+    }
+  }
+
   ngOnInit() {
 
   }

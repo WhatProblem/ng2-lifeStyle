@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { HttpService } from '../../sdk/http/http.service';
 
 @Component({
   selector: 'film-filmDetailTop',
@@ -9,8 +10,19 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 export class FilmDetailTopComponent implements OnInit {
   private arrowIntroduce: boolean = false;
+  private filmId: string = null;
 
-  constructor() { }
+  constructor(
+    public httpService: HttpService
+  ) { }
+
+  @Input() set filmDetailId(data) {
+    if (data) {
+      this.filmId = data;
+      console.log(data);
+      this.getFilmDetail(data);
+    }
+  }
 
   ngOnInit() {
 
@@ -18,5 +30,16 @@ export class FilmDetailTopComponent implements OnInit {
 
   showIntroduce() {
     this.arrowIntroduce = !this.arrowIntroduce;
+  }
+
+  getFilmDetail(val) {
+    let self = this;
+    let param = {
+      film_id: val,
+      user_id: '0001'
+    }
+    this.httpService.request('get', 'filmDetail', param).then(res => {
+      console.log(res);
+    });
   }
 }

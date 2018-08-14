@@ -10,8 +10,15 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 export class GameDetailTopComponent implements OnInit {
   private heroStory: boolean = false;
+  private gameId: string = null;
 
   constructor() { }
+
+  @Input() set gameDetailId(data) {
+    if (data) {
+      this.gameId = data;
+    }
+  }
 
   ngOnInit() {
 

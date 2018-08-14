@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute, Route, Routes } from '@angular/router';
 import Swiper from 'swiper';
+import { HttpService } from '../../../sdk/http/http.service';
 
 @Component({
   selector: 'home-popGame',
@@ -14,7 +15,8 @@ export class HomePopGameComponent implements OnInit {
   private ctrlShow: boolean = false;
 
   constructor(
-    public router: Router
+    public router: Router,
+    public httpService: HttpService
   ) { }
 
   @Input() set popGame(data) {
@@ -66,6 +68,53 @@ export class HomePopGameComponent implements OnInit {
 
   hideSuspension() {
     this.ctrlShow = false;
+  }
+
+  changeLock(val) {
+    let param = {
+      game_id: val.game_id,
+      game_lock: val.game_lock == '0' ? '1' : '0',
+      user_id: '0001'
+    };
+    let lockOrFavFlag = 'lock';
+    this.changeFavOrLock(param, lockOrFavFlag);
+  }
+
+  changeFav(val) {
+    let param = {
+      game_id: val.game_id,
+      game_favorite: val.game_favorite == '0' ? '1' : '0',
+      user_id: '0001'
+    };
+    let lockOrFavFlag = 'fav';
+    this.changeFavOrLock(param, lockOrFavFlag);
+  }
+
+  changeFavOrLock(param, lockOrFavFlag) {
+    let self = this;
+    this.httpService.request('post', 'popGameFavOrLock', param).then(res => {
+      if (res['code'] === 200) {
+        if (lockOrFavFlag === 'fav') {
+          self.popGamePoster.forEach((item, index) => {
+            if (item) {
+              if (param['game_id'] === item['game_id']) {
+                item['game_favorite'] = param['game_favorite'];
+                return;
+              }
+            }
+          });
+        } else if (lockOrFavFlag === 'lock') {
+          self.popGamePoster.forEach((item, index) => {
+            if (item) {
+              if (param['game_id'] === item['game_id']) {
+                item['game_lock'] = param['game_lock'];
+                return;
+              }
+            }
+          });
+        }
+      }
+    });
   }
 
   // 导航
