@@ -11,6 +11,7 @@ import { HttpService } from '../../sdk/http/http.service';
 export class FilmDetailTopComponent implements OnInit {
   private arrowIntroduce: boolean = false;
   private filmId: string = null;
+  private filmDetailData: object = null;
 
   constructor(
     public httpService: HttpService
@@ -39,7 +40,9 @@ export class FilmDetailTopComponent implements OnInit {
       user_id: '0001'
     }
     this.httpService.request('get', 'filmDetail', param).then(res => {
-      console.log(res);
+      if (res['code'] === 200) {
+        self.filmDetailData = res['data'][0];
+      }
     });
   }
 }

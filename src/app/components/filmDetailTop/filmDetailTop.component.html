@@ -33,22 +33,29 @@
     </div>
   </div>
   <div class="doScore">
-    <span class="videoTitle">《影片名称》</span>
+    <span class="videoTitle">{{filmDetailData?.film_name}}</span>
     <el-tag class="myFont">地区</el-tag>
     <el-tag class="myFont">年代</el-tag>
-    <el-tag class="myFont">科幻</el-tag>
+    <el-tag class="myFont" *ngIf="filmDetailData?.film_type == 1">战争</el-tag>
+    <el-tag class="myFont" *ngIf="filmDetailData?.film_type == 2">爱情</el-tag>
+    <el-tag class="myFont" *ngIf="filmDetailData?.film_type == 3">古装</el-tag>
+    <el-tag class="myFont" *ngIf="filmDetailData?.film_type == 4">动作</el-tag>
+    <el-tag class="myFont" *ngIf="filmDetailData?.film_type == 5">玄幻</el-tag>
+    <el-tag class="myFont" *ngIf="filmDetailData?.film_type == 6">喜剧</el-tag>
+    <el-tag class="myFont" *ngIf="filmDetailData?.film_type == 7">科幻</el-tag>
+    <el-tag class="myFont" *ngIf="filmDetailData?.film_type == 8">动漫</el-tag>
+    <el-tag class="myFont" *ngIf="filmDetailData?.film_type == 9">娱乐</el-tag>
     <span class="scores">
       <el-rate [model]="3" [show-text]="true" [text-color]="'#ff9900'">
           </el-rate>
     </span>
-    <span class="videoScore">9.6</span>
+    <span class="videoScore">{{filmDetailData?.film_score}}</span>
   </div>
   <div class="introduce">
     <h5>影片简介：</h5>
     <div class="description">
       <div [ngClass]="{'desContentAll': arrowIntroduce, 'desContent': !arrowIntroduce}">
-        《大话西游》是由周星驰彩星电影公司和西安电影制片厂联合摄制的爱情悲喜剧电影， 由刘镇伟执导，周星驰、朱茵、吴孟达、莫文蔚等主演。《大话西游》由《月光宝盒》和《大圣娶亲》两部组成， 讲述了一个跨越时空的悲喜交加的爱情故事。影片于1995年在中国香港和内地上映，
-        直到1997年后才开始在内地各个高校和网络上流传并迅速走红。影片上映20年之际， 《大话西游》于2014年10月24日在内地重映。
+        {{filmDetailData?.film_desc}}
       </div>
       <i class="myFont arrowIcon" [ngClass]="{'ng2-lifeStyle-msnui-triangle-up':arrowIntroduce, 'ng2-lifeStyle-msnui-triangle-down':!arrowIntroduce}"
         (click)="showIntroduce()"></i>

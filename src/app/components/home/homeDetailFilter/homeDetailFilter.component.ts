@@ -82,26 +82,125 @@ export class HomeDetailFilterComponent implements OnInit {
   }
 
   selectTimeYear(val) {
-    console.log(val);
+    this.timeYear = val;
+    let param = {};
+    if (this.curShowDetail === 'homeFilmDetail') {
+      param = {
+        pages_index: '0',
+        pages_total: '12',
+        film_score: this.projScore,
+        film_time: this.timeYear,
+        film_type: this.filmType,
+        user_id: '0001',
+      }
+    } else if (this.curShowDetail === 'homeMusicDetail') {
+      param = {
+        pages_index: '0',
+        pages_total: '12',
+        music_score: this.projScore,
+        music_time: this.timeYear,
+        music_type: this.musicType,
+        user_id: '0001',
+      }
+    }
+    this.homeDetailFilter(param);
   }
 
   selectMusicType(val) {
-    console.log(val);
+    this.musicType = val;
+    let param = {};
+    if (this.curShowDetail === 'homeMusicDetail') {
+      param = {
+        pages_index: '0',
+        pages_total: '12',
+        music_score: this.projScore,
+        music_time: this.timeYear,
+        music_type: this.musicType,
+        user_id: '0001',
+      }
+    }
+    this.homeDetailFilter(param);
   }
 
   selectFilmType(val) {
-    console.log(val);
+    this.filmType = val;
+    let param = {};
+    if (this.curShowDetail === 'homeFilmDetail') {
+      param = {
+        pages_index: '0',
+        pages_total: '12',
+        film_score: this.projScore,
+        film_time: this.timeYear,
+        film_type: this.filmType,
+        user_id: '0001',
+      }
+    }
+    this.homeDetailFilter(param);
   }
 
   selectGameType(val) {
-    console.log(val);
+    this.gameType = val;
+    let param = {};
+    if (this.curShowDetail === 'homeGameDetail') {
+      param = {
+        pages_index: '0',
+        pages_total: '12',
+        game_hero_score: this.projScore,
+        game_hero_type: this.gameType,
+        game_hero_degree: this.gameDifficult,
+        user_id: '0001',
+      }
+    }
+    this.homeDetailFilter(param);
   }
 
   selectProjScore(val) {
-    console.log(val);
+    this.projScore = val;
+    let param = {};
+    if (this.curShowDetail === 'homeFilmDetail') {
+      param = {
+        pages_index: '0',
+        pages_total: '12',
+        film_score: this.projScore,
+        film_time: this.timeYear,
+        film_type: this.filmType,
+        user_id: '0001',
+      }
+    } else if (this.curShowDetail === 'homeMusicDetail') {
+      param = {
+        pages_index: '0',
+        pages_total: '12',
+        music_score: this.projScore,
+        music_time: this.timeYear,
+        music_type: this.musicType,
+        user_id: '0001',
+      }
+    } else if (this.curShowDetail === 'homeGameDetail') {
+      param = {
+        pages_index: '0',
+        pages_total: '12',
+        game_hero_score: this.projScore,
+        game_hero_type: this.gameType,
+        game_hero_degree: this.gameDifficult,
+        user_id: '0001',
+      }
+    }
+    this.homeDetailFilter(param);
   }
 
   selectGameDifficult(val) {
-    console.log(val);
+    this.gameDifficult = val;
+    let param = {};
+    if (this.curShowDetail === 'homeGameDetail') {
+      param = {
+        pages_index: '0',
+        pages_total: '12',
+        game_hero_score: this.projScore,
+        game_hero_type: this.gameType,
+        game_hero_degree: this.gameDifficult,
+        user_id: '0001',
+      }
+    }
+    this.homeDetailFilter(param);
   }
 }
