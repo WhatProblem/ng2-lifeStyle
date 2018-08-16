@@ -6,6 +6,7 @@ import { NgEventService } from '../utils/eventService/ngEvent.service';
 import { AuthService } from '../config/auth.service';
 import { session } from '../utils/session/session';
 import { HttpService } from '../sdk/http/http.service';
+import { ElMessageService } from 'element-angular';
 
 @Component({
   selector: 'app-headerBar',
@@ -33,7 +34,8 @@ export class HeaderBarComponent implements OnInit {
     public authService: AuthService,
     public router: Router,
     public location: Location,
-    public httpService: HttpService
+    public httpService: HttpService,
+    private message: ElMessageService
   ) { }
 
   ngOnInit() {
@@ -86,7 +88,7 @@ export class HeaderBarComponent implements OnInit {
     let curUrl = this.location.path();
     this.ctrlLogin = false;
     this.httpService.request('post', 'userLogOut').then(res => {
-      if (res) {
+      if (res['code'] === 200) {
         if (curUrl.indexOf('profile') !== -1) {
           new Promise((resolve, reject) => {
             self.authService.logOut();
@@ -97,7 +99,12 @@ export class HeaderBarComponent implements OnInit {
         } else {
           this.authService.logOut();
         }
+      } else if (res['code'] === 201) {
+        self.message.show('登录超时!');
+      } else if (res['code'] === 204) {
+        self.message.show('系统错误!');
       }
+      this.authService.logOut();
     });
   }
 

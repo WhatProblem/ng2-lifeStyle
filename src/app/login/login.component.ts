@@ -51,8 +51,8 @@ export class LoginedComponent implements OnInit {
       password: this.password
     };
     this.httpService.request('post', 'userLogin', param).then(res => {
-      if (res['token']) {
-        self.authService.login(res['token']);
+      if (res['code'] === 200) {
+        self.authService.login(res['data']['token']);
         let obj = { logined: 'LOGIN_SUCCESS' };
         self.ngEventService.eventEmit.emit(obj);
       }
