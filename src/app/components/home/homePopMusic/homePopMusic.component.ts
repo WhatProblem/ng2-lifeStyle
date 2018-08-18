@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import Swiper from 'swiper';
 import { HttpService } from '../../../sdk/http/http.service';
+import { ElMessageService } from 'element-angular';
 
 @Component({
   selector: 'home-popMusic',
@@ -13,7 +14,8 @@ export class HomePopMusicComponent implements OnInit {
   private curIndex: number;
 
   constructor(
-    public httpService: HttpService
+    public httpService: HttpService,
+    private message: ElMessageService
   ) { }
 
   @Input() set popMusic(data) {
@@ -66,6 +68,8 @@ export class HomePopMusicComponent implements OnInit {
             }
           }
         });
+      } else if (res['code'] === 511) {
+        self.message.show('请先登录!');
       }
     });
   }

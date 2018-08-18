@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router, Route, Routes } from '@angular/router';
 import { SuspensionService } from './suspension.service';
+import { ElMessageService } from 'element-angular';
 
 @Component({
   selector: 'app-suspension',
@@ -13,7 +14,8 @@ export class SuspensionComponent implements OnInit {
 
   constructor(
     public router: Router,
-    private suspensionService: SuspensionService
+    private suspensionService: SuspensionService,
+    private message: ElMessageService
   ) { }
 
   @Output() lockChange: EventEmitter<any> = new EventEmitter();
@@ -35,12 +37,14 @@ export class SuspensionComponent implements OnInit {
     let param = {
       film_id: data.film_id,
       film_lock: data.film_lock === '1' ? '0' : '1',
-      user_id: '0001'
     };
     this.suspensionService.changeLockOrFav('post', 'popFilmLockOrFav', param).then(res => {
       if (res['code'] === 200) {
         self.lockChange.emit(param);
         self.detailData['film_lock'] = param['film_lock'];
+      } else if (res['code'] === 511) {
+        self.message.show('请先登录!');
+        return;
       }
     });
   }
@@ -51,12 +55,14 @@ export class SuspensionComponent implements OnInit {
     let param = {
       film_id: data.film_id,
       film_favorite: data.film_favorite === '1' ? '0' : '1',
-      user_id: '0001'
     };
     this.suspensionService.changeLockOrFav('post', 'popFilmLockOrFav', param).then(res => {
       if (res['code'] === 200) {
         self.favChange.emit(param);
         self.detailData['film_favorite'] = param['film_favorite'];
+      } else if (res['code'] === 511) {
+        self.message.show('请先登录!');
+        return;
       }
     });
   }
