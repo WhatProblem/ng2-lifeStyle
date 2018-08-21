@@ -1,5 +1,8 @@
 # ng2-lifeStyle
-npm install
+npm install<br>
+
+或者：npm install --registry=https://registry.npm.taobao.org<br>
+
 如果安装失败，运行:
 ```
 npm config set registry https://registry.npmjs.org/
