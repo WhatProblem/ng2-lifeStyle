@@ -67,6 +67,10 @@
       .talkSend {
         position: relative;
 
+        .el-input__inner {
+          padding: 0px 20px;
+        }
+
         .sendBtn {
           position: absolute;
           top: 0;

@@ -16,6 +16,7 @@ export class AuthService {
   // }
   login(token) {
     session.put('AUTHENTICATE_LOGIN', token, true);
+    location.reload();
   }
 
   // logout(): void {
@@ -25,5 +26,6 @@ export class AuthService {
   logOut() {
     // this.isLoggedIn = false;
     session.remove('AUTHENTICATE_LOGIN');
+    location.reload();
   }
 }

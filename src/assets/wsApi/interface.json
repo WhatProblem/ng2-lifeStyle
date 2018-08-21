@@ -53,5 +53,20 @@
     "wsUrl": "film/filmDetail",
     "param": "film_id, user_id",
     "content": "film详情数据"
+  },
+  "doFilmScore": {
+    "wsUrl": "film/doFilmScore",
+    "param": "film_id, film_score",
+    "content": "film评分"
+  },
+  "getFilmTalk": {
+    "wsUrl": "film/getFilmTalk",
+    "param": "film_id",
+    "content": "影片评论"
+  },
+  "doFilmTalk": {
+    "wsUrl": "film/doFilmTalk",
+    "param": "film_id, user_id, film_talk_content",
+    "content": "影片评论内容"
   }
 }

@@ -14,18 +14,18 @@
           <div class="talkTitle el-icon-edit">讨论区</div>
           <div class="talkContent">
             <el-card class="box-card" body-style="background: #666; color: #ffd04b; border: none">
-              <div *ngFor="let item of [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]" class="text item">
+              <div *ngFor="let item of talkContent;let i=index" class="text item">
                 <div class="discuss">
                   <i class="myFont ng2-lifeStyle-yonghu">:</i>
-                  <span>{{'列表内容 ' + item }}</span>
+                  <span>{{item?.film_talk_content}}</span>
                 </div>
               </div>
             </el-card>
           </div>
           <div class="talkSend">
-            <el-input placeholder="请输入发送内容..." [model]="input2">
+            <el-input placeholder="请输入发送内容..." [(model)]="filmTalkContent">
             </el-input>
-            <i class="myFont ng2-lifeStyle-jijianfasong sendBtn"></i>
+            <i class="myFont ng2-lifeStyle-jijianfasong sendBtn" (click)="doFilmTalk(filmTalkContent)"></i>
             <i class="myFont ng2-lifeStyle-shuohuaqipao speakFlag"></i>
           </div>
         </div>
@@ -46,10 +46,10 @@
     <el-tag class="myFont" *ngIf="filmDetailData?.film_type == 8">动漫</el-tag>
     <el-tag class="myFont" *ngIf="filmDetailData?.film_type == 9">娱乐</el-tag>
     <span class="scores">
-      <el-rate [model]="3" [show-text]="true" [text-color]="'#ff9900'">
+      <el-rate [model]="filmScore" (modelChange)="doScore($event)" [show-text]="true" [text-color]="'#ff9900'">
           </el-rate>
     </span>
-    <span class="videoScore">{{filmDetailData?.film_score}}</span>
+    <span class="videoScore">{{showFilmScore}}</span>
   </div>
   <div class="introduce">
     <h5>影片简介：</h5>
