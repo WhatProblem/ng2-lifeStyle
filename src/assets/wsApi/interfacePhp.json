@@ -15,24 +15,24 @@
     "content": "测试请求接口封装"
   },
   "homePopFilm": {
-    "wsUrl": "home/homePopFilm/index.php",
+    "wsUrl": "home/homePopFilm",
     "param": "film_score",
     "content": "homePopFilm部分数据 home部分"
   },
   "homePopMusic": {
-    "wsUrl": "home/homePopMusic/index.php",
+    "wsUrl": "home/homePopMusic",
     "param": "music_score",
     "content": "homePopMusic部分数据 home部分"
   },
   "homePopGame": {
-    "wsUrl": "home/homePopGame/index.php",
+    "wsUrl": "home/homePopGame",
     "param": "game_power",
     "content": "homePopGame部分数据 home部分"
   },
   "popFilmLockOrFav": {
-    "wsUrl": "home/homePopFilm/favOrLock.php",
+    "wsUrl": "home/popFilmLockOrFav",
     "param": "film_id, film_lock, film_favorite,user_id",
-    "content": "homePopFilm部分数据favorite lock部分"
+    "content": "homePopFilm部分数据 lock部分"
   },
   "popMusicFav": {
     "wsUrl": "home/homePopMusic/popMusicFav.php",

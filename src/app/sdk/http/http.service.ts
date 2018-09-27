@@ -12,7 +12,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class HttpService {
   public wsInterface: object;
-  public nodeOrPhp: boolean = false;
+  public nodeOrPhp: boolean = true;
 
   constructor(public http: HttpClient) { }
 
@@ -22,12 +22,12 @@ export class HttpService {
     let baseUrl = null;
     let apiJson = null;
     if (this.nodeOrPhp) { // php interface
-      baseUrl = 'http://127.0.0.1/apiLifeStyle/api/';
-      apiJson = '../../../assets/wsApi/interfacePhp.json';
+      baseUrl = 'http://www.whatproblem.top/';
+      // apiJson = '../../../assets/wsApi/interfacePhp.json';
     } else {
       baseUrl = 'http://localhost:9000/';
-      apiJson = '../../../assets/wsApi/interface.json';
     }
+    apiJson = '../../../assets/wsApi/interface.json';
     return this.http.get(apiJson).toPromise().then(res => {
       let apiUrl = res[url]['wsUrl'];
       let param = null;
