@@ -40,13 +40,12 @@ export class FilmDetailTopComponent implements OnInit {
     this.arrowIntroduce = !this.arrowIntroduce;
   }
 
-
   getFilmDetail(val) {
     let self = this;
     let param = {
       film_id: val,
       user_id: '0001'
-    }
+    };
     this.httpService.request('get', 'filmDetail', param).then(res => {
       if (res['code'] === 200) {
         self.filmDetailData = res['data'][0];
