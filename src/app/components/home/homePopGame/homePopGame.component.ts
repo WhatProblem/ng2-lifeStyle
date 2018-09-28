@@ -14,6 +14,7 @@ export class HomePopGameComponent implements OnInit {
   public gameDetail: object = null;
   private popGamePoster: object[] = [];
   private ctrlShow: boolean = false;
+  private fastClick: boolean = true;
 
   constructor(
     public router: Router,
@@ -94,31 +95,37 @@ export class HomePopGameComponent implements OnInit {
 
   changeFavOrLock(param, lockOrFavFlag) {
     let self = this;
-    this.httpService.request('post', 'popGameFavOrLock', param).then(res => {
-      if (res['code'] === 200) {
-        if (lockOrFavFlag === 'fav') {
-          self.popGamePoster.forEach((item, index) => {
-            if (item) {
-              if (param['game_id'] === item['game_id']) {
-                item['game_favorite'] = param['game_favorite'];
-                return;
+    if (this.fastClick) {
+      this.fastClick = false;
+      this.httpService.request('post', 'popGameFavOrLock', param).then(res => {
+        if (res['code'] === 200) {
+          if (lockOrFavFlag === 'fav') {
+            self.popGamePoster.forEach((item, index) => {
+              if (item) {
+                if (param['game_id'] === item['game_id']) {
+                  item['game_favorite'] = param['game_favorite'];
+                  return;
+                }
               }
-            }
-          });
-        } else if (lockOrFavFlag === 'lock') {
-          self.popGamePoster.forEach((item, index) => {
-            if (item) {
-              if (param['game_id'] === item['game_id']) {
-                item['game_lock'] = param['game_lock'];
-                return;
+            });
+          } else if (lockOrFavFlag === 'lock') {
+            self.popGamePoster.forEach((item, index) => {
+              if (item) {
+                if (param['game_id'] === item['game_id']) {
+                  item['game_lock'] = param['game_lock'];
+                  return;
+                }
               }
-            }
-          });
+            });
+          }
+        } else if (res['code'] === 511) {
+          self.message.show('请先登录!');
+        } else if (res['code'] === 201) {
+          self.message.show('系统错误!');
         }
-      } else if (res['code'] === 511) {
-        self.message.show('请先登录!');
-      }
-    });
+        this.fastClick = true;
+      });
+    }
   }
 
   // 导航

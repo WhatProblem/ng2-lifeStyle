@@ -11,6 +11,7 @@ import { ElMessageService } from 'element-angular';
 })
 export class SuspensionComponent implements OnInit {
   public detailData: object = null;
+  private fastClick: boolean = true;
 
   constructor(
     public router: Router,
@@ -38,15 +39,21 @@ export class SuspensionComponent implements OnInit {
       film_id: data.film_id,
       film_lock: data.film_lock === '1' ? '0' : '1',
     };
-    this.suspensionService.changeLockOrFav('post', 'popFilmLockOrFav', param).then(res => {
-      if (res['code'] === 200) {
-        self.lockChange.emit(param);
-        self.detailData['film_lock'] = param['film_lock'];
-      } else if (res['code'] === 511) {
-        self.message.show('请先登录!');
+    if (this.fastClick) {
+      this.fastClick = false;
+      this.suspensionService.changeLockOrFav('post', 'popFilmLockOrFav', param).then(res => {
+        if (res['code'] === 200) {
+          self.lockChange.emit(param);
+          self.detailData['film_lock'] = param['film_lock'];
+        } else if (res['code'] === 511) {
+          self.message.show('请先登录!');
+        } else if (res['code'] === 201) {
+          self.message.show('系统错误');
+        }
+        this.fastClick = true;
         return;
-      }
-    });
+      });
+    }
   }
 
   // 收藏/取消
@@ -56,15 +63,21 @@ export class SuspensionComponent implements OnInit {
       film_id: data.film_id,
       film_favorite: data.film_favorite === '1' ? '0' : '1',
     };
-    this.suspensionService.changeLockOrFav('post', 'popFilmLockOrFav', param).then(res => {
-      if (res['code'] === 200) {
-        self.favChange.emit(param);
-        self.detailData['film_favorite'] = param['film_favorite'];
-      } else if (res['code'] === 511) {
-        self.message.show('请先登录!');
+    if (this.fastClick) {
+      this.fastClick = false;
+      this.suspensionService.changeLockOrFav('post', 'popFilmLockOrFav', param).then(res => {
+        if (res['code'] === 200) {
+          self.favChange.emit(param);
+          self.detailData['film_favorite'] = param['film_favorite'];
+        } else if (res['code'] === 511) {
+          self.message.show('请先登录!');
+        } else if (res['code'] === 201) {
+          self.message.show('系统错误');
+        }
+        this.fastClick = true;
         return;
-      }
-    });
+      });
+    }
   }
 
   // 导航
